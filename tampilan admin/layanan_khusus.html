@@ -85,520 +85,491 @@
       </aside>
 
       <!-- Konten Dashboard -->
-       <div class="content-wrapper">        
-        <!-- Main content -->
-        <!-- Content Header (Page header) -->
-<section class="content-header">
-  <h1>
-    <i class="fa fa-stethoscope text-primary"></i> Layanan Khusus
-    <small>Sistem Rekomendasi Personal & Manajemen Pasien</small>
-  </h1>
-  <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="#">Layanan Medis</a></li>
-    <li class="active">Layanan Khusus</li>
-  </ol>
-</section>
+<div class="content-wrapper">        
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      <i class="fa fa-user-md"></i> Layanan Konsultasi Medis
+      <small>Sistem Rekomendasi Terintegrasi AI</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+      <li class="active">Layanan Khusus</li>
+    </ol>
+  </section>
 
-<!-- Main content -->
-<section class="content">
-  
-  <!-- Stats Cards -->
-  <div class="row">
-    <div class="col-lg-3 col-xs-6">
-      <div class="small-box bg-aqua">
-        <div class="inner">
-          <h3 id="totalRekomendasi">142</h3>
-          <p>Total Rekomendasi</p>
-        </div>
-        <div class="icon">
-          <i class="fa fa-clipboard"></i>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-xs-6">
-      <div class="small-box bg-green">
-        <div class="inner">
-          <h3 id="rekomendasisHariIni">23</h3>
-          <p>Rekomendasi Hari Ini</p>
-        </div>
-        <div class="icon">
-          <i class="fa fa-calendar-check-o"></i>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-xs-6">
-      <div class="small-box bg-yellow">
-        <div class="inner">
-          <h3 id="menungguFollowup">8</h3>
-          <p>Menunggu Follow-up</p>
-        </div>
-        <div class="icon">
-          <i class="fa fa-clock-o"></i>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-xs-6">
-      <div class="small-box bg-red">
-        <div class="inner">
-          <h3 id="prioritasTinggi">3</h3>
-          <p>Prioritas Tinggi</p>
-        </div>
-        <div class="icon">
-          <i class="fa fa-exclamation-triangle"></i>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- Main content -->
+  <section class="content">  
 
-  <div class="row">
-    <!-- Service Overview -->
-    <div class="col-md-4">
-      <div class="box box-primary">
-        <div class="box-header with-border text-center">
-          <h3 class="box-title"><i class="fa fa-user-md"></i> Layanan Konsultasi Khusus</h3>
-        </div>
-        <div class="box-body text-center">
-          <div style="padding: 20px 0;">
-            <i class="fa fa-stethoscope" style="font-size: 64px; color: #3c8dbc; margin-bottom: 20px;"></i>
-            <p style="font-size: 16px; line-height: 1.6;">
-              Sistem konsultasi medis terintegrasi dengan AI-powered recommendation engine
-            </p>
+    <!-- Info boxes -->
+    <div class="row">
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+          <span class="info-box-icon bg-aqua"><i class="fa fa-clipboard"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Total Rekomendasi</span>
+            <span class="info-box-number" id="totalRekomendasi">156</span>
           </div>
-          <button class="btn btn-primary btn-lg btn-block" onclick="startFlow()" style="margin-bottom: 10px;">
-            <i class="fa fa-play-circle"></i> Mulai Layanan Baru
-          </button>
-          <button class="btn btn-default btn-block" onclick="showHistory()">
-            <i class="fa fa-history"></i> Lihat Riwayat
-          </button>
         </div>
       </div>
-
-      <!-- Quick Actions -->
-      <div class="box box-info">
-        <div class="box-header with-border">
-          <h3 class="box-title"><i class="fa fa-flash"></i> Quick Actions</h3>
+      
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+          <span class="info-box-icon bg-green"><i class="fa fa-calendar-check-o"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Hari Ini</span>
+            <span class="info-box-number" id="rekomendasisHariIni">28</span>
+          </div>
         </div>
-        <div class="box-body">
-          <div class="list-group">
-            <a href="#" class="list-group-item" onclick="quickTemplate('diabetes')">
-              <i class="fa fa-heartbeat text-red"></i> Template Diabetes
-            </a>
-            <a href="#" class="list-group-item" onclick="quickTemplate('hipertensi')">
-              <i class="fa fa-tint text-blue"></i> Template Hipertensi
-            </a>
-            <a href="#" class="list-group-item" onclick="quickTemplate('jantung')">
-              <i class="fa fa-heart text-red"></i> Template Jantung
-            </a>
-            <a href="#" class="list-group-item" onclick="quickEmergency()">
-              <i class="fa fa-ambulance text-orange"></i> Konsultasi Darurat
-            </a>
+      </div>
+      
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+          <span class="info-box-icon bg-yellow"><i class="fa fa-clock-o"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Pending Follow-up</span>
+            <span class="info-box-number" id="pendingFollowup">12</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+          <span class="info-box-icon bg-red"><i class="fa fa-exclamation-triangle"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Kasus Mendesak</span>
+            <span class="info-box-number" id="urgentCases">3</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Main Flow Process -->
-    <div class="col-md-8">
-      <div class="box box-solid">
-        <div class="box-header with-border">
-          <h3 class="box-title"><i class="fa fa-sitemap"></i> Alur Layanan Khusus</h3>
-          <div class="box-tools pull-right">
-            <span class="label label-info" id="currentStep">Siap Memulai</span>
+    <div class="row">
+      <!-- Service Overview -->
+      <div class="col-md-4">
+        <div class="box box-primary">
+          <div class="box-header with-border text-center">
+            <h3 class="box-title"><i class="fa fa-user-md"></i> Layanan Konsultasi Khusus</h3>
+          </div>
+          <div class="box-body text-center">
+            <div style="padding: 20px 0;">
+              <i class="fa fa-stethoscope" style="font-size: 64px; color: #3c8dbc; margin-bottom: 20px;"></i>
+              <p style="font-size: 16px; line-height: 1.6;">
+                Sistem konsultasi medis terintegrasi dengan<br>                
+              </p>
+            </div>
+            <button class="btn btn-primary btn-lg btn-block" onclick="startFlow()" style="margin-bottom: 10px;">
+              <i class="fa fa-play-circle"></i> Mulai Layanan Baru
+            </button>
+            <button class="btn btn-default btn-block" onclick="showHistory()">
+              <i class="fa fa-history"></i> Lihat Riwayat
+            </button>
           </div>
         </div>
-        <div class="box-body">
-          
-          <!-- Progress Bar -->
-          <div class="progress progress-sm" style="margin-bottom: 20px;">
-            <div class="progress-bar progress-bar-primary progress-bar-striped" id="progressBar" style="width: 0%"></div>
-          </div>
-          
-          <!-- Initial State -->
-          <div id="initialState">
-            <div class="callout callout-info">
-              <h4><i class="fa fa-info-circle"></i> Informasi Layanan</h4>
-              <p>Layanan khusus memungkinkan Anda untuk:</p>
-              <ul>
-                <li>Membuat rekomendasi personal berdasarkan kondisi pasien</li>
-                <li>Menggunakan template yang telah tersedia</li>
-                <li>Mengirim rekomendasi melalui berbagai metode</li>
-                <li>Menjadwalkan follow-up otomatis</li>
-                <li>Tracking dan monitoring hasil</li>
-              </ul>
-              <p><strong>Klik "Mulai Layanan Baru" untuk memulai proses</strong></p>
+      </div>
+
+      <!-- Main Flow Process -->
+      <div class="col-md-8">
+        <div class="box box-solid">
+          <div class="box-header with-border">
+            <h3 class="box-title"><i class="fa fa-sitemap"></i> Alur Layanan Khusus</h3>
+            <div class="box-tools pull-right">
+              <span class="btn label-info" id="currentStep">Siap Memulai</span>
             </div>
           </div>
-
-          <!-- Flow Process -->
-          <div id="flowContainer" style="display: none;">
+          <div class="box-body">
             
-            <!-- Step 1: Patient Selection -->
-            <div class="timeline" id="step1">
-              <div class="time-label">
-                <span class="bg-blue"><i class="fa fa-user"></i> Step 1: Pilih Pasien</span>
-              </div>
-              <div>
-                <i class="fa fa-users bg-blue"></i>
-                <div class="timeline-item">
-                  <div class="timeline-header">
-                    <strong>Pilih atau Tambah Data Pasien</strong>
+            <!-- Progress Bar -->
+            <div class="progress progress-sm" style="margin-bottom: 20px;">
+              <div class="progress-bar progress-bar-primary progress-bar-striped active" id="progressBar" style="width: 0%"></div>
+            </div>
+            
+            <!-- Initial State -->
+            <div id="initialState">
+              <div class="callout callout-info">
+                <h4><i class="fa fa-info-circle"></i> Selamat Datang di Layanan Konsultasi Khusus</h4>
+                <div class="row">
+                  <div class="col-md-8">
+                    <p><strong>Layanan khusus memungkinkan Anda untuk:</strong></p>
+                    <ul>
+                      <li>Membuat rekomendasi personal berdasarkan kondisi pasien</li>
+                      <li>Menggunakan template yang telah tersedia</li>
+                      <li>Mengirim rekomendasi melalui berbagai metode</li>
+                      <li>Menjadwalkan follow-up otomatis</li>
+                      <li>Tracking dan monitoring hasil</li>
+                    </ul>
                   </div>
-                  <div class="timeline-body">
-                    <div class="row">
-                      <div class="col-md-8">
-                        <div class="form-group">
-                          <label>Cari Pasien (Nama/RM)</label>
-                          <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Ketik nama atau nomor RM..." id="patientSearch">
-                            <span class="input-group-btn">
-                              <button class="btn btn-info" onclick="searchPatient()">
-                                <i class="fa fa-search"></i>
-                              </button>
-                            </span>
+                  <div class="col-md-4 text-center">
+                    <i class="fa fa-rocket" style="font-size: 60px; color: #17a2b8; opacity: 0.7;"></i>
+                  </div>
+                </div>
+                <p class="text-center"><strong>Klik "Mulai Layanan Baru" untuk memulai proses</strong></p>
+              </div>
+            </div>
+
+            <!-- Flow Process -->
+            <div id="flowContainer" style="display: none;">
+              
+              <!-- Step 1: Patient Selection -->
+              <div class="timeline" id="step1">
+                <div class="time-label">
+                  <span class="bg-blue"><i class="fa fa-user"></i> Step 1: Pilih Pasien</span>
+                </div>
+                <div>
+                  <i class="fa fa-users bg-blue"></i>
+                  <div class="timeline-item">
+                    <div class="timeline-header">
+                      <strong><i class="fa fa-search"></i> Pilih atau Tambah Data Pasien</strong>
+                    </div>
+                    <div class="timeline-body">
+                      <div class="row">
+                        <div class="col-md-8">
+                          <div class="form-group">
+                            <label>Cari Pasien (Nama/RM)</label>
+                            <div class="input-group">
+                              <input type="text" class="form-control" placeholder="Ketik nama atau nomor RM..." id="patientSearch">
+                              <span class="input-group-btn">
+                                <button class="btn btn-info" onclick="searchPatient()">
+                                  <i class="fa fa-search"></i>
+                                </button>
+                              </span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="col-md-4">
-                        <label>&nbsp;</label><br>
-                        <button class="btn btn-success btn-block" onclick="addNewPatient()">
-                          <i class="fa fa-plus"></i> Pasien Baru
-                        </button>
-                      </div>
-                    </div>
-                    
-                    <!-- Patient Results -->
-                    <div id="patientResults" style="display: none;">
-                      <h5>Hasil Pencarian:</h5>
-                      <div class="table-responsive">
-                        <table class="table table-bordered table-hover">
-                          <thead>
-                            <tr>
-                              <th>Nama</th>
-                              <th>No. RM</th>
-                              <th>Umur</th>
-                              <th>Terakhir Konsultasi</th>
-                              <th>Aksi</th>
-                            </tr>
-                          </thead>
-                          <tbody id="patientTableBody">
-                            <!-- Dynamic content -->
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    
-                    <!-- Selected Patient Info -->
-                    <div id="selectedPatient" style="display: none;">
-                      <div class="callout callout-success">
-                        <h4><i class="fa fa-user-circle"></i> Pasien Terpilih</h4>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <strong>Nama:</strong> <span id="selectedName">-</span><br>
-                            <strong>No. RM:</strong> <span id="selectedRM">-</span><br>
-                            <strong>Umur:</strong> <span id="selectedAge">-</span>
-                          </div>
-                          <div class="col-md-6">
-                            <strong>Jenis Kelamin:</strong> <span id="selectedGender">-</span><br>
-                            <strong>Alamat:</strong> <span id="selectedAddress">-</span><br>
-                            <strong>Telepon:</strong> <span id="selectedPhone">-</span>
-                          </div>
-                        </div>
-                        <div class="pull-right" style="margin-top: 10px;">
-                          <button class="btn btn-primary" onclick="proceedToStep2()">
-                            <i class="fa fa-arrow-right"></i> Lanjut ke Rekomendasi
+                        <div class="col-md-4">
+                          <label>&nbsp;</label><br>
+                          <button class="btn btn-success btn-block" onclick="addNewPatient()">
+                            <i class="fa fa-plus"></i> Pasien Baru
                           </button>
+                        </div>
+                      </div>
+                      
+                      <!-- Patient Results -->
+                      <div id="patientResults" style="display: none;">
+                        <h5><i class="fa fa-list"></i> Hasil Pencarian:</h5>
+                        <div class="table-responsive">
+                          <table class="table table-bordered table-hover">
+                            <thead>
+                              <tr>
+                                <th><i class="fa fa-user"></i> Nama</th>
+                                <th><i class="fa fa-id-card"></i> No. RM</th>
+                                <th><i class="fa fa-birthday-cake"></i> Umur</th>
+                                <th><i class="fa fa-calendar"></i> Terakhir Konsultasi</th>
+                                <th><i class="fa fa-cogs"></i> Aksi</th>
+                              </tr>
+                            </thead>
+                            <tbody id="patientTableBody">
+                              <!-- Dynamic content -->
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      
+                      <!-- Selected Patient Info -->
+                      <div id="selectedPatient" style="display: none;">
+                        <div class="callout callout-success">
+                          <h4><i class="fa fa-user-circle"></i> Pasien Terpilih</h4>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <p><strong><i class="fa fa-user"></i> Nama:</strong> <span id="selectedName">-</span></p>
+                              <p><strong><i class="fa fa-id-card"></i> No. RM:</strong> <span id="selectedRM">-</span></p>
+                              <p><strong><i class="fa fa-birthday-cake"></i> Umur:</strong> <span id="selectedAge">-</span></p>
+                            </div>
+                            <div class="col-md-6">
+                              <p><strong><i class="fa fa-venus-mars"></i> Jenis Kelamin:</strong> <span id="selectedGender">-</span></p>
+                              <p><strong><i class="fa fa-home"></i> Alamat:</strong> <span id="selectedAddress">-</span></p>
+                              <p><strong><i class="fa fa-phone"></i> Telepon:</strong> <span id="selectedPhone">-</span></p>
+                            </div>
+                          </div>
+                          <div class="text-center" style="margin-top: 15px;">
+                            <button class="btn btn-primary btn-lg" onclick="proceedToStep2()">
+                              <i class="fa fa-arrow-right"></i> Lanjut ke Assessment
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Step 2: Medical Assessment & Recommendation -->
-            <div class="timeline" id="step2" style="display: none;">
-              <div class="time-label">
-                <span class="bg-yellow"><i class="fa fa-stethoscope"></i> Step 2: Assessment & Rekomendasi</span>
-              </div>
-              <div>
-                <i class="fa fa-clipboard bg-yellow"></i>
-                <div class="timeline-item">
-                  <div class="timeline-header">
-                    <strong>Pemeriksaan & Buat Rekomendasi Personal</strong>
+              <!-- Step 2: Medical Assessment & Recommendation -->
+              <div class="timeline" id="step2" style="display: none;">
+                <div class="time-label">
+                  <span class="bg-yellow"><i class="fa fa-stethoscope"></i> Step 2: Assessment & Rekomendasi</span>
+                </div>
+                <div>
+                  <i class="fa fa-clipboard bg-yellow"></i>
+                  <div class="timeline-item">
+                    <div class="timeline-header">
+                      <strong><i class="fa fa-user-md"></i> Pemeriksaan & Buat Rekomendasi Personal</strong>
+                    </div>
+                    <div class="timeline-body">
+                      <form id="assessmentForm">
+                        
+                        <!-- Vital Signs Section -->
+                        <div class="box box-info">
+                          <div class="box-header with-border">
+                            <h3 class="box-title"><i class="fa fa-heartbeat"></i> Vital Signs</h3>
+                          </div>
+                          <div class="box-body">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <label><i class="fa fa-tint text-red"></i> Tekanan Darah</label>
+                                  <input type="text" class="form-control" placeholder="120/80 mmHg">
+                                </div>
+                                <div class="form-group">
+                                  <label><i class="fa fa-thermometer-half text-orange"></i> Suhu</label>
+                                  <input type="text" class="form-control" placeholder="36.5°C">
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <label><i class="fa fa-heartbeat text-red"></i> Nadi</label>
+                                  <input type="text" class="form-control" placeholder="80 bpm">
+                                </div>
+                                <div class="form-group">
+                                  <label><i class="fa fa-wind text-blue"></i> Respirasi</label>
+                                  <input type="text" class="form-control" placeholder="20/menit">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Symptoms Section -->
+                        <div class="box box-warning">
+                          <div class="box-header with-border">
+                            <h3 class="box-title"><i class="fa fa-comments"></i> Keluhan & Gejala</h3>
+                          </div>
+                          <div class="box-body">
+                            <div class="form-group">
+                              <label><i class="fa fa-exclamation-circle"></i> Keluhan Utama</label>
+                              <textarea class="form-control" rows="3" placeholder="Jelaskan keluhan utama pasien..."></textarea>
+                            </div>
+                            <div class="form-group">
+                              <label><i class="fa fa-history"></i> Riwayat Penyakit Sekarang</label>
+                              <textarea class="form-control" rows="3" placeholder="Riwayat penyakit sekarang..."></textarea>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <!-- Diagnosis & Recommendation Section -->
+                        <div class="box box-success">
+                          <div class="box-header with-border">
+                            <h3 class="box-title"><i class="fa fa-user-md"></i> Diagnosis & Rekomendasi</h3>
+                            <div class="box-tools pull-right">
+                              <button type="button" class="btn btn-sm btn-primary" onclick="showTemplates()">
+                                <i class="fa fa-book"></i> Template
+                              </button>
+                              <button type="button" class="btn btn-sm btn-info" onclick="aiAssistant()">
+                                <i class="fa fa-magic"></i> AI Assistant
+                              </button>
+                            </div>
+                          </div>
+                          <div class="box-body">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <label><i class="fa fa-stethoscope"></i> Diagnosis Primer</label>
+                                  <input type="text" class="form-control" placeholder="Diagnosis utama...">
+                                </div>
+                                <div class="form-group">
+                                  <label><i class="fa fa-plus-square"></i> Diagnosis Sekunder</label>
+                                  <input type="text" class="form-control" placeholder="Diagnosis tambahan...">
+                                </div>
+                                <div class="form-group">
+                                  <label><i class="fa fa-flag"></i> Tingkat Prioritas</label>
+                                  <select class="form-control">
+                                    <option value="normal">Normal</option>
+                                    <option value="mendesak">Mendesak</option>
+                                    <option value="sangat-mendesak">Sangat Mendesak</option>
+                                    <option value="darurat">Darurat</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <label><i class="fa fa-pills"></i> Rekomendasi Pengobatan</label>
+                                  <textarea class="form-control" rows="4" placeholder="Detail rekomendasi pengobatan..."></textarea>
+                                </div>
+                                <div class="form-group">
+                                  <label><i class="fa fa-cutlery"></i> Lifestyle & Diet</label>
+                                  <textarea class="form-control" rows="2" placeholder="Rekomendasi gaya hidup dan diet..."></textarea>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="row">
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label><i class="fa fa-calendar-plus-o"></i> Follow-up Date</label>
+                                  <input type="date" class="form-control">
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label><i class="fa fa-user-md"></i> Dokter Rujukan</label>
+                                  <select class="form-control">
+                                    <option>Pilih dokter...</option>
+                                    <option>Dr. Ahmad - Spesialis Dalam</option>
+                                    <option>Dr. Sari - Spesialis Jantung</option>
+                                    <option>Dr. Budi - Spesialis Paru</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label><i class="fa fa-flask"></i> Lab/Pemeriksaan</label>
+                                  <select class="form-control" multiple>
+                                    <option>Darah Lengkap</option>
+                                    <option>Gula Darah</option>
+                                    <option>Kolesterol</option>
+                                    <option>Rontgen Thorax</option>
+                                    <option>EKG</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="box-footer text-center">
+                            <button type="button" class="btn btn-success btn-lg" onclick="saveAssessment()">
+                              <i class="fa fa-save"></i> Simpan & Lanjutkan
+                            </button>
+                            <button type="button" class="btn btn-default" onclick="previewRecommendation()">
+                              <i class="fa fa-eye"></i> Preview
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
                   </div>
-                  <div class="timeline-body">
-                    <form id="assessmentForm">
+                </div>
+              </div>
+
+              <!-- Step 3: Send to Patient -->
+              <div class="timeline" id="step3" style="display: none;">
+                <div class="time-label">
+                  <span class="bg-green"><i class="fa fa-send"></i> Step 3: Kirim ke Pasien</span>
+                </div>
+                <div>
+                  <i class="fa fa-paper-plane bg-green"></i>
+                  <div class="timeline-item">
+                    <div class="timeline-header">
+                      <strong><i class="fa fa-share"></i> Pengiriman Rekomendasi & Follow-up</strong>
+                    </div>
+                    <div class="timeline-body">
                       <div class="row">
                         <div class="col-md-6">
-                          <div class="box box-info">
-                            <div class="box-header">
-                              <h4><i class="fa fa-heartbeat"></i> Vital Signs</h4>
+                          <div class="box box-primary">
+                            <div class="box-header with-border">
+                              <h4 class="box-title"><i class="fa fa-share"></i> Metode Pengiriman</h4>
                             </div>
                             <div class="box-body">
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <div class="form-group">
-                                    <label>Tekanan Darah</label>
-                                    <input type="text" class="form-control" placeholder="120/80 mmHg">
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <div class="form-group">
-                                    <label>Nadi</label>
-                                    <input type="text" class="form-control" placeholder="80 bpm">
+                              <div class="form-group">
+                                <label>Pilih Metode</label>
+                                <select class="form-control" onchange="toggleDeliveryMethod(this)" id="deliveryMethod">
+                                  <option value="">Pilih metode...</option>
+                                  <option value="email">📧 Email</option>
+                                  <option value="whatsapp">💬 WhatsApp</option>
+                                  <option value="sms">📱 SMS</option>
+                                  <option value="print">🖨️ Print/Cetak</option>
+                                  <option value="portal">🌐 Patient Portal</option>
+                                </select>
+                              </div>
+                              
+                              <div id="contactDetails" style="display: none;">
+                                <div class="form-group">
+                                  <label id="contactLabel">Kontak</label>
+                                  <div class="input-group">
+                                    <input type="text" class="form-control" id="contactInput" placeholder="Masukkan kontak">
+                                    <span class="input-group-btn">
+                                      <button class="btn btn-info" onclick="validateContact()">
+                                        <i class="fa fa-check"></i>
+                                      </button>
+                                    </span>
                                   </div>
                                 </div>
                               </div>
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <div class="form-group">
-                                    <label>Suhu</label>
-                                    <input type="text" class="form-control" placeholder="36.5°C">
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <div class="form-group">
-                                    <label>Respirasi</label>
-                                    <input type="text" class="form-control" placeholder="20/menit">
-                                  </div>
-                                </div>
+
+                              <div class="form-group">
+                                <label>Template Pesan</label>
+                                <select class="form-control" onchange="loadMessageTemplate(this)">
+                                  <option>Pilih template...</option>
+                                  <option value="formal">Formal</option>
+                                  <option value="friendly">Ramah</option>
+                                  <option value="urgent">Mendesak</option>
+                                </select>
+                              </div>
+                              
+                              <div class="form-group">
+                                <label>Pesan Tambahan</label>
+                                <textarea class="form-control" rows="4" id="additionalMessage" placeholder="Pesan tambahan untuk pasien..."></textarea>
                               </div>
                             </div>
                           </div>
                         </div>
+                        
                         <div class="col-md-6">
-                          <div class="box box-warning">
-                            <div class="box-header">
-                              <h4><i class="fa fa-comments"></i> Keluhan & Gejala</h4>
+                          <div class="box box-info">
+                            <div class="box-header with-border">
+                              <h4 class="box-title"><i class="fa fa-cogs"></i> Pengaturan Tambahan</h4>
                             </div>
                             <div class="box-body">
                               <div class="form-group">
-                                <label>Keluhan Utama</label>
-                                <textarea class="form-control" rows="3" placeholder="Jelaskan keluhan utama pasien..."></textarea>
-                              </div>
-                              <div class="form-group">
-                                <label>Riwayat Penyakit Sekarang</label>
-                                <textarea class="form-control" rows="3" placeholder="Riwayat penyakit sekarang..."></textarea>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div class="box box-success">
-                        <div class="box-header">
-                          <h4><i class="fa fa-user-md"></i> Diagnosis & Rekomendasi</h4>
-                          <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-sm btn-primary" onclick="showTemplates()">
-                              <i class="fa fa-book"></i> Template
-                            </button>
-                            <button type="button" class="btn btn-sm btn-info" onclick="aiAssistant()">
-                              <i class="fa fa-magic"></i> AI Assistant
-                            </button>
-                          </div>
-                        </div>
-                        <div class="box-body">
-                          <div class="row">
-                            <div class="col-md-6">
-                              <div class="form-group">
-                                <label>Diagnosis Primer</label>
-                                <input type="text" class="form-control" placeholder="Diagnosis utama...">
-                              </div>
-                              <div class="form-group">
-                                <label>Diagnosis Sekunder</label>
-                                <input type="text" class="form-control" placeholder="Diagnosis tambahan...">
-                              </div>
-                              <div class="form-group">
-                                <label>Tingkat Prioritas</label>
-                                <select class="form-control">
-                                  <option value="normal">Normal</option>
-                                  <option value="mendesak">Mendesak</option>
-                                  <option value="sangat-mendesak">Sangat Mendesak</option>
-                                  <option value="darurat">Darurat</option>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="col-md-6">
-                              <div class="form-group">
-                                <label>Rekomendasi Pengobatan</label>
-                                <textarea class="form-control" rows="4" placeholder="Detail rekomendasi pengobatan..."></textarea>
-                              </div>
-                              <div class="form-group">
-                                <label>Lifestyle & Diet</label>
-                                <textarea class="form-control" rows="2" placeholder="Rekomendasi gaya hidup dan diet..."></textarea>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          <div class="row">
-                            <div class="col-md-4">
-                              <div class="form-group">
-                                <label>Follow-up Date</label>
-                                <input type="date" class="form-control">
-                              </div>
-                            </div>
-                            <div class="col-md-4">
-                              <div class="form-group">
-                                <label>Dokter Rujukan</label>
-                                <select class="form-control">
-                                  <option>Pilih dokter...</option>
-                                  <option>Dr. Ahmad Spesialis Dalam</option>
-                                  <option>Dr. Sari Spesialis Jantung</option>
-                                  <option>Dr. Budi Spesialis Paru</option>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="col-md-4">
-                              <div class="form-group">
-                                <label>Lab/Pemeriksaan</label>
-                                <select class="form-control" multiple>
-                                  <option>Darah Lengkap</option>
-                                  <option>Gula Darah</option>
-                                  <option>Kolesterol</option>
-                                  <option>Rontgen Thorax</option>
-                                  <option>EKG</option>
-                                </select>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="box-footer">
-                          <button type="button" class="btn btn-success btn-lg" onclick="saveAssessment()">
-                            <i class="fa fa-save"></i> Simpan Rekomendasi
-                          </button>
-                          <button type="button" class="btn btn-default pull-right" onclick="previewRecommendation()">
-                            <i class="fa fa-eye"></i> Preview
-                          </button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Step 3: Send to Patient -->
-            <div class="timeline" id="step3" style="display: none;">
-              <div class="time-label">
-                <span class="bg-green"><i class="fa fa-send"></i> Step 3: Kirim ke Pasien</span>
-              </div>
-              <div>
-                <i class="fa fa-paper-plane bg-green"></i>
-                <div class="timeline-item">
-                  <div class="timeline-header">
-                    <strong>Pengiriman Rekomendasi & Follow-up</strong>
-                  </div>
-                  <div class="timeline-body">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="box box-primary">
-                          <div class="box-header">
-                            <h4><i class="fa fa-share"></i> Metode Pengiriman</h4>
-                          </div>
-                          <div class="box-body">
-                            <div class="form-group">
-                              <label>Pilih Metode</label>
-                              <select class="form-control" onchange="toggleDeliveryMethod(this)" id="deliveryMethod">
-                                <option value="">Pilih metode...</option>
-                                <option value="email">📧 Email</option>
-                                <option value="whatsapp">💬 WhatsApp</option>
-                                <option value="sms">📱 SMS</option>
-                                <option value="print">🖨️ Print/Cetak</option>
-                                <option value="portal">🌐 Patient Portal</option>
-                              </select>
-                            </div>
-                            
-                            <div id="contactDetails" style="display: none;">
-                              <div class="form-group">
-                                <label id="contactLabel">Kontak</label>
-                                <div class="input-group">
-                                  <input type="text" class="form-control" id="contactInput" placeholder="Masukkan kontak">
-                                  <span class="input-group-btn">
-                                    <button class="btn btn-info" onclick="validateContact()">
-                                      <i class="fa fa-check"></i>
-                                    </button>
-                                  </span>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" checked> Kirim salinan ke rekam medis elektronik
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox"> Jadwalkan follow-up otomatis
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox"> Kirim reminder sebelum follow-up
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox"> CC ke keluarga (jika ada)
+                                  </label>
                                 </div>
                               </div>
-                            </div>
-
-                            <div class="form-group">
-                              <label>Template Pesan</label>
-                              <select class="form-control" onchange="loadMessageTemplate(this)">
-                                <option>Pilih template...</option>
-                                <option value="formal">Formal</option>
-                                <option value="friendly">Ramah</option>
-                                <option value="urgent">Mendesak</option>
-                              </select>
-                            </div>
-                            
-                            <div class="form-group">
-                              <label>Pesan Tambahan</label>
-                              <textarea class="form-control" rows="4" id="additionalMessage" placeholder="Pesan tambahan untuk pasien..."></textarea>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div class="col-md-6">
-                        <div class="box box-info">
-                          <div class="box-header">
-                            <h4><i class="fa fa-cogs"></i> Pengaturan Tambahan</h4>
-                          </div>
-                          <div class="box-body">
-                            <div class="form-group">
-                              <div class="checkbox">
-                                <label>
-                                  <input type="checkbox" checked> Kirim salinan ke rekam medis elektronik
-                                </label>
+                              
+                              <div class="form-group">
+                                <label>Priority Pengiriman</label>
+                                <select class="form-control">
+                                  <option>Normal</option>
+                                  <option>High Priority</option>
+                                  <option>Urgent</option>
+                                </select>
                               </div>
-                              <div class="checkbox">
-                                <label>
-                                  <input type="checkbox"> Jadwalkan follow-up otomatis
-                                </label>
-                              </div>
-                              <div class="checkbox">
-                                <label>
-                                  <input type="checkbox"> Kirim reminder sebelum follow-up
-                                </label>
-                              </div>
-                              <div class="checkbox">
-                                <label>
-                                  <input type="checkbox"> CC ke keluarga (jika ada)
-                                </label>
+                              
+                              <div class="form-group">
+                                <label>Jadwal Pengiriman</label>
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="schedule" value="now" checked> Kirim sekarang
+                                  </label>
+                                </div>
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="schedule" value="later"> Jadwalkan nanti
+                                  </label>
+                                </div>
+                                <input type="datetime-local" class="form-control" style="margin-top: 10px; display: none;" id="scheduleTime">
                               </div>
                             </div>
                             
-                            <div class="form-group">
-                              <label>Priority Pengiriman</label>
-                              <select class="form-control">
-                                <option>Normal</option>
-                                <option>High Priority</option>
-                                <option>Urgent</option>
-                              </select>
+                            <div class="box-footer text-center">
+                              <button type="button" class="btn btn-success btn-lg btn-block" onclick="sendRecommendation()">
+                                <i class="fa fa-rocket"></i> Kirim Rekomendasi
+                              </button>
                             </div>
-                            
-                            <div class="form-group">
-                              <label>Jadwal Pengiriman</label>
-                              <div class="radio">
-                                <label>
-                                  <input type="radio" name="schedule" value="now" checked> Kirim sekarang
-                                </label>
-                              </div>
-                              <div class="radio">
-                                <label>
-                                  <input type="radio" name="schedule" value="later"> Jadwalkan nanti
-                                </label>
-                              </div>
-                              <input type="datetime-local" class="form-control" style="margin-top: 10px; display: none;" id="scheduleTime">
-                            </div>
-                          </div>
-                          
-                          <div class="box-footer">
-                            <button type="button" class="btn btn-success btn-lg btn-block" onclick="sendRecommendation()">
-                              <i class="fa fa-rocket"></i> Kirim Rekomendasi
-                            </button>
                           </div>
                         </div>
                       </div>
@@ -606,110 +577,112 @@
                   </div>
                 </div>
               </div>
-            </div>
-            
-            <!-- End Timeline -->
-            <div class="timeline" id="timelineEnd" style="display: none;">
-              <div class="time-label">
-                <span class="bg-gray"><i class="fa fa-clock-o"></i> Selesai</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Success Modal -->
-  <div class="modal modal-success fade" id="successModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title"><i class="fa fa-check-circle"></i> Berhasil!</h4>
-        </div>
-        <div class="modal-body">
-          <div class="text-center">
-            <i class="fa fa-check-circle" style="font-size: 64px; color: #00a65a; margin-bottom: 20px;"></i>
-            <h3>Rekomendasi Berhasil Dikirim!</h3>
-            <p id="successMessage">Rekomendasi telah dikirim ke pasien dan tersimpan dalam sistem.</p>
-            <div class="alert alert-info">
-              <strong>Reference ID:</strong> <span id="referenceId">REC-2024-001</span>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-success" onclick="printReceipt()">
-            <i class="fa fa-print"></i> Cetak Bukti
-          </button>
-          <button type="button" class="btn btn-primary" onclick="startNewService()">
-            <i class="fa fa-plus"></i> Layanan Baru
-          </button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">
-            <i class="fa fa-close"></i> Tutup
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Template Modal -->
-  <div class="modal fade" id="templateModal">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title"><i class="fa fa-book"></i> Template Rekomendasi</h4>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="list-group" id="templateList">
-                <a href="#" class="list-group-item active" onclick="selectTemplate('diabetes')">
-                  <i class="fa fa-heartbeat"></i> Diabetes Mellitus
-                </a>
-                <a href="#" class="list-group-item" onclick="selectTemplate('hipertensi')">
-                  <i class="fa fa-tint"></i> Hipertensi
-                </a>
-                <a href="#" class="list-group-item" onclick="selectTemplate('jantung')">
-                  <i class="fa fa-heart"></i> Penyakit Jantung
-                </a>
-                <a href="#" class="list-group-item" onclick="selectTemplate('respiratory')">
-                  <i class="fa fa-lungs"></i> Gangguan Pernapasan
-                </a>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <div id="templateContent">
-                <h4>Template Diabetes Mellitus</h4>
-                <div class="well">
-                  <strong>Diagnosis:</strong> Diabetes Mellitus Tipe 2<br>
-                  <strong>Rekomendasi:</strong><br>
-                  - Kontrol gula darah rutin<br>
-                  - Diet rendah gula dan karbohidrat<br>
-                  - Olahraga teratur 30 menit/hari<br>
-                  - Minum obat sesuai anjuran dokter<br>
-                  <strong>Follow-up:</strong> 2 minggu
+              
+              <!-- End Timeline -->
+              <div class="timeline" id="timelineEnd" style="display: none;">
+                <div class="time-label">
+                  <span class="bg-gray"><i class="fa fa-clock-o"></i> Selesai</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" onclick="applyTemplate()">
-            <i class="fa fa-check"></i> Gunakan Template
-          </button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">
-            <i class="fa fa-close"></i> Batal
-          </button>
+      </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal modal-success fade" id="successModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title"><i class="fa fa-check-circle"></i> Berhasil!</h4>
+          </div>
+          <div class="modal-body">
+            <div class="text-center">
+              <i class="fa fa-check-circle"></i>
+              <h3>Rekomendasi Berhasil Dikirim!</h3>
+              <p id="successMessage">Rekomendasi telah dikirim ke pasien dan tersimpan dalam sistem.</p>
+              <div class="alert alert-info">
+                <strong>Reference ID:</strong> <span id="referenceId">REC-2024-001</span>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" onclick="printReceipt()">
+              <i class="fa fa-print"></i> Cetak Bukti
+            </button>
+            <button type="button" class="btn btn-primary" onclick="startNewService()">
+              <i class="fa fa-plus"></i> Layanan Baru
+            </button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              <i class="fa fa-close"></i> Tutup
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-</section>
+    <!-- Template Modal -->
+    <div class="modal fade" id="templateModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title"><i class="fa fa-book"></i> Template Rekomendasi</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="list-group" id="templateList">
+                  <a href="#" class="list-group-item active" onclick="selectTemplate('diabetes')">
+                    <i class="fa fa-heartbeat"></i> Diabetes Mellitus
+                  </a>
+                  <a href="#" class="list-group-item" onclick="selectTemplate('hipertensi')">
+                    <i class="fa fa-tint"></i> Hipertensi
+                  </a>
+                  <a href="#" class="list-group-item" onclick="selectTemplate('jantung')">
+                    <i class="fa fa-heart"></i> Penyakit Jantung
+                  </a>
+                  <a href="#" class="list-group-item" onclick="selectTemplate('respiratory')">
+                    <i class="fa fa-lungs"></i> Gangguan Pernapasan
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div id="templateContent">
+                  <h4>Template Diabetes Mellitus</h4>
+                  <div class="well">
+                    <p><strong>Diagnosis:</strong> Diabetes Mellitus Tipe 2</p>
+                    <p><strong>Rekomendasi:</strong></p>
+                    <ul>
+                      <li>Kontrol gula darah rutin</li>
+                      <li>Diet rendah gula dan karbohidrat</li>
+                      <li>Olahraga teratur 30 menit/hari</li>
+                      <li>Minum obat sesuai anjuran dokter</li>
+                    </ul>
+                    <p><strong>Follow-up:</strong> 2 minggu</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="applyTemplate()">
+              <i class="fa fa-check"></i> Gunakan Template
+            </button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              <i class="fa fa-close"></i> Batal
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>
 
 <script>
 // Global variables
@@ -728,6 +701,8 @@ function updateStats() {
   setInterval(() => {
     $('#totalRekomendasi').text(Math.floor(Math.random() * 50) + 140);
     $('#rekomendasisHariIni').text(Math.floor(Math.random() * 10) + 20);
+    $('#pendingFollowup').text(Math.floor(Math.random() * 5) + 10);
+    $('#urgentCases').text(Math.floor(Math.random() * 3) + 2);
   }, 30000);
 }
 
@@ -759,7 +734,7 @@ function startFlow() {
   document.getElementById('step1').style.display = 'block';
   
   updateProgress(25);
-  updateCurrentStep('Pilih Pasien');
+  updateCurrentStep('Step 1: Pilih Pasien');
   
   // Focus on patient search
   setTimeout(() => {
@@ -780,6 +755,10 @@ function searchPatient() {
   
   if (query.length < 3) return;
   
+  // Show loading
+  $('#patientResults').show();
+  $('#patientTableBody').html('<tr><td colspan="5" class="text-center"><i class="fa fa-spinner fa-spin"></i> Mencari pasien...</td></tr>');
+  
   // Simulate API call
   setTimeout(() => {
     const mockData = [
@@ -789,10 +768,382 @@ function searchPatient() {
         rm: 'RM001234',
         umur: 45,
         gender: 'Laki-laki',
-        alamat: 'Jl. Merdeka No.
-      </div><!-- /.content-wrapper -->
-       
-      <!-- Konten Selesai -->
+        alamat: 'Jl. Merdeka No. 123, Jakarta',
+        phone: '08123456789',
+        lastVisit: '15 Aug 2024'
+      },
+      {
+        id: 2,
+        nama: 'Sari Dewi',
+        rm: 'RM001235',
+        umur: 38,
+        gender: 'Perempuan',
+        alamat: 'Jl. Sudirman No. 456, Jakarta',
+        phone: '08198765432',
+        lastVisit: '12 Aug 2024'
+      }
+    ];
+    
+    let tableHtml = '';
+    mockData.forEach(patient => {
+      tableHtml += `
+        <tr>
+          <td>${patient.nama}</td>
+          <td>${patient.rm}</td>
+          <td>${patient.umur} tahun</td>
+          <td>${patient.lastVisit}</td>
+          <td>
+            <button class="btn btn-sm btn-primary" onclick="selectPatient(${JSON.stringify(patient).replace(/"/g, '&quot;')})">
+              <i class="fa fa-check"></i> Pilih
+            </button>
+          </td>
+        </tr>
+      `;
+    });
+    
+    $('#patientTableBody').html(tableHtml);
+  }, 1000);
+}
+
+function selectPatient(patient) {
+  selectedPatientData = patient;
+  
+  // Update selected patient info
+  $('#selectedName').text(patient.nama);
+  $('#selectedRM').text(patient.rm);
+  $('#selectedAge').text(patient.umur + ' tahun');
+  $('#selectedGender').text(patient.gender);
+  $('#selectedAddress').text(patient.alamat);
+  $('#selectedPhone').text(patient.phone);
+  
+  // Show selected patient section
+  $('#patientResults').hide();
+  $('#selectedPatient').show();
+}
+
+function addNewPatient() {
+  // Simulate adding new patient
+  alert('Fitur tambah pasien baru akan membuka form registrasi.');
+}
+
+function proceedToStep2() {
+  if (!selectedPatientData) {
+    alert('Silakan pilih pasien terlebih dahulu.');
+    return;
+  }
+  
+  // Hide step 1 and show step 2
+  document.getElementById('step1').style.display = 'none';
+  document.getElementById('step2').style.display = 'block';
+  
+  updateProgress(50);
+  updateCurrentStep('Step 2: Assessment');
+  
+  // Scroll to step 2
+  document.getElementById('step2').scrollIntoView({ behavior: 'smooth' });
+}
+
+function showTemplates() {
+  $('#templateModal').modal('show');
+}
+
+function selectTemplate(type) {
+  // Remove active class from all items
+  $('#templateList .list-group-item').removeClass('active');
+  
+  // Add active class to selected item
+  $(`#templateList .list-group-item[onclick="selectTemplate('${type}')"]`).addClass('active');
+  
+  // Update template content based on type
+  const templates = {
+    diabetes: {
+      title: 'Template Diabetes Mellitus',
+      diagnosis: 'Diabetes Mellitus Tipe 2',
+      recommendations: [
+        'Kontrol gula darah rutin',
+        'Diet rendah gula dan karbohidrat',
+        'Olahraga teratur 30 menit/hari',
+        'Minum obat sesuai anjuran dokter'
+      ],
+      followup: '2 minggu'
+    },
+    hipertensi: {
+      title: 'Template Hipertensi',
+      diagnosis: 'Hipertensi Primer',
+      recommendations: [
+        'Kontrol tekanan darah rutin',
+        'Diet rendah garam',
+        'Olahraga teratur',
+        'Hindari stress berlebihan'
+      ],
+      followup: '1 bulan'
+    },
+    jantung: {
+      title: 'Template Penyakit Jantung',
+      diagnosis: 'Penyakit Jantung Koroner',
+      recommendations: [
+        'Kontrol kolesterol',
+        'Diet rendah lemak jenuh',
+        'Olahraga ringan teratur',
+        'Konsumsi obat pengencer darah'
+      ],
+      followup: '2 minggu'
+    }
+  };
+  
+  const template = templates[type];
+  if (template) {
+    let content = `
+      <h4>${template.title}</h4>
+      <div class="well">
+        <p><strong>Diagnosis:</strong> ${template.diagnosis}</p>
+        <p><strong>Rekomendasi:</strong></p>
+        <ul>
+          ${template.recommendations.map(rec => `<li>${rec}</li>`).join('')}
+        </ul>
+        <p><strong>Follow-up:</strong> ${template.followup}</p>
+      </div>
+    `;
+    $('#templateContent').html(content);
+  }
+}
+
+function applyTemplate() {
+  // Apply selected template to form
+  alert('Template berhasil diterapkan ke form!');
+  $('#templateModal').modal('hide');
+}
+
+function aiAssistant() {
+  alert('Fitur AI Assistant akan segera tersedia!');
+}
+
+function saveAssessment() {
+  // Validate form
+  const diagnosis = document.querySelector('input[placeholder="Diagnosis utama..."]').value;
+  
+  if (!diagnosis.trim()) {
+    alert('Silakan isi diagnosis terlebih dahulu.');
+    return;
+  }
+  
+  // Save assessment data
+  assessmentData = {
+    vitals: {
+      bloodPressure: document.querySelector('input[placeholder="120/80 mmHg"]').value,
+      pulse: document.querySelector('input[placeholder="80 bpm"]').value,
+      temperature: document.querySelector('input[placeholder="36.5°C"]').value,
+      respiration: document.querySelector('input[placeholder="20/menit"]').value
+    },
+    diagnosis: diagnosis,
+    recommendations: document.querySelector('textarea[placeholder="Detail rekomendasi pengobatan..."]').value
+  };
+  
+  // Hide step 2 and show step 3
+  document.getElementById('step2').style.display = 'none';
+  document.getElementById('step3').style.display = 'block';
+  
+  updateProgress(75);
+  updateCurrentStep('Step 3: Kirim ke Pasien');
+  
+  // Scroll to step 3
+  document.getElementById('step3').scrollIntoView({ behavior: 'smooth' });
+}
+
+function previewRecommendation() {
+  alert('Fitur preview rekomendasi akan menampilkan hasil dalam format PDF.');
+}
+
+function toggleDeliveryMethod(select) {
+  const method = select.value;
+  const contactDetails = document.getElementById('contactDetails');
+  const contactLabel = document.getElementById('contactLabel');
+  const contactInput = document.getElementById('contactInput');
+  
+  if (method) {
+    contactDetails.style.display = 'block';
+    
+    switch(method) {
+      case 'email':
+        contactLabel.textContent = 'Email Address';
+        contactInput.placeholder = 'Masukkan alamat email';
+        contactInput.type = 'email';
+        break;
+      case 'whatsapp':
+      case 'sms':
+        contactLabel.textContent = 'Nomor Telepon';
+        contactInput.placeholder = 'Masukkan nomor telepon';
+        contactInput.type = 'tel';
+        break;
+      case 'print':
+        contactDetails.style.display = 'none';
+        break;
+      case 'portal':
+        contactLabel.textContent = 'Patient ID';
+        contactInput.placeholder = 'Masukkan Patient ID';
+        contactInput.type = 'text';
+        break;
+    }
+  } else {
+    contactDetails.style.display = 'none';
+  }
+}
+
+function validateContact() {
+  const method = document.getElementById('deliveryMethod').value;
+  const contact = document.getElementById('contactInput').value;
+  
+  if (!contact.trim()) {
+    alert('Silakan masukkan kontak yang valid.');
+    return;
+  }
+  
+  // Simple validation based on method
+  let isValid = false;
+  switch(method) {
+    case 'email':
+      isValid = /\S+@\S+\.\S+/.test(contact);
+      break;
+    case 'whatsapp':
+    case 'sms':
+      isValid = /^[\+]?[0-9\-\(\)\s]+$/.test(contact);
+      break;
+    default:
+      isValid = true;
+  }
+  
+  if (isValid) {
+    alert('Kontak valid!');
+    document.getElementById('contactInput').style.borderColor = 'green';
+  } else {
+    alert('Format kontak tidak valid!');
+    document.getElementById('contactInput').style.borderColor = 'red';
+  }
+}
+
+function loadMessageTemplate(select) {
+  const template = select.value;
+  const messageArea = document.getElementById('additionalMessage');
+  
+  const templates = {
+    formal: 'Kepada Yth. Bapak/Ibu,\n\nBerikut adalah hasil konsultasi dan rekomendasi medis...',
+    friendly: 'Halo,\n\nSemoga dalam keadaan sehat. Berikut adalah rekomendasi dari konsultasi hari ini...',
+    urgent: 'PENTING - SEGERA DIBACA\n\nBerdasarkan hasil pemeriksaan, diperlukan tindak lanjut segera...'
+  };
+  
+  if (templates[template]) {
+    messageArea.value = templates[template];
+  }
+}
+
+function sendRecommendation() {
+  const method = document.getElementById('deliveryMethod').value;
+  
+  if (!method) {
+    alert('Silakan pilih metode pengiriman terlebih dahulu.');
+    return;
+  }
+  
+  // Simulate sending process
+  const btn = event.target;
+  btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Mengirim...';
+  btn.disabled = true;
+  
+  setTimeout(() => {
+    // Hide step 3 and show timeline end
+    document.getElementById('step3').style.display = 'none';
+    document.getElementById('timelineEnd').style.display = 'block';
+    
+    updateProgress(100);
+    updateCurrentStep('Selesai');
+    
+    // Generate reference ID
+    const refId = 'REC-' + new Date().getFullYear() + '-' + String(Date.now()).slice(-6);
+    document.getElementById('referenceId').textContent = refId;
+    
+    // Show success modal
+    $('#successModal').modal('show');
+    
+    // Reset button
+    btn.innerHTML = '<i class="fa fa-rocket"></i> Kirim Rekomendasi';
+    btn.disabled = false;
+  }, 2000);
+}
+
+function printReceipt() {
+  alert('Mencetak bukti pengiriman...');
+}
+
+function startNewService() {
+  // Reset all steps
+  document.getElementById('flowContainer').style.display = 'none';
+  document.getElementById('initialState').style.display = 'block';
+  
+  // Reset all timeline steps
+  document.getElementById('step1').style.display = 'none';
+  document.getElementById('step2').style.display = 'none';
+  document.getElementById('step3').style.display = 'none';
+  document.getElementById('timelineEnd').style.display = 'none';
+  
+  // Reset data
+  selectedPatientData = null;
+  assessmentData = null;
+  currentStep = 0;
+  
+  // Reset progress
+  updateProgress(0);
+  updateCurrentStep('Siap Memulai');
+  
+  // Reset forms
+  document.getElementById('patientSearch').value = '';
+  document.getElementById('assessmentForm').reset();
+  
+  // Hide patient sections
+  document.getElementById('patientResults').style.display = 'none';
+  document.getElementById('selectedPatient').style.display = 'none';
+  
+  // Close modal
+  $('#successModal').modal('hide');
+  
+  // Scroll to top
+  document.querySelector('.content').scrollIntoView({ behavior: 'smooth' });
+}
+
+function showHistory() {
+  alert('Fitur riwayat akan menampilkan daftar konsultasi sebelumnya.');
+}
+
+function quickTemplate(type) {
+  // Quick access to templates
+  startFlow();
+  setTimeout(() => {
+    // Simulate patient selection for demo
+    const demoPatient = {
+      id: 999,
+      nama: 'Demo Patient',
+      rm: 'RM999999',
+      umur: 40,
+      gender: 'Laki-laki',
+      alamat: 'Demo Address',
+      phone: '08123456789'
+    };
+    selectPatient(demoPatient);
+    
+    setTimeout(() => {
+      proceedToStep2();
+      setTimeout(() => {
+        showTemplates();
+        selectTemplate(type);
+      }, 500);
+    }, 500);
+  }, 1000);
+}
+
+function quickEmergency() {
+  alert('Membuka form konsultasi darurat dengan prioritas tinggi.');
+  startFlow();
+}
+</script>
 
       <!-- footer -->
      <footer class="main-footer ">
