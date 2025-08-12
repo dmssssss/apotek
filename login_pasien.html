@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login sistem pencatatan obat apotek untuk pasien">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Login Pasien - Apotek Indonesia</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="img/apotek.jpg" as="image">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    
+    <style>
+        /* CSS Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #FF6F61 0%, #6A82FB 100%);
+            --background-gradient: linear-gradient(135deg, #F3E5AB 0%, #EBAF8D 100%);
+            --success-color: #27ae60;
+            --error-color: #e74c3c;
+            --text-primary: #333333;
+            --text-secondary: #555555;
+            --border-color: #D1D1D1;
+            --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --shadow-hover: 0 10px 25px rgba(76, 175, 80, 0.3);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--background-gradient);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background Pattern */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 40px 40px, 20px 20px;
+            opacity: 0.3;
+        }
+
+        /* Main Container */
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow-light);
+            width: 100%;
+            max-width: 420px;
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo Section */
+        .logo-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #FF6F61;
+            animation: pulse 2s infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+        }
+
+        .system-title {
+            font-size: clamp(20px, 4vw, 24px);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .system-subtitle {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            transition: var(--transition);
+            background: #f8f9fa;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #FF6F61;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .input-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 16px;
+            cursor: pointer;
+            user-select: none;
+            transition: var(--transition);
+        }
+
+        .input-icon:hover {
+            color: #FF6F61;
+        }
+
+        .password-toggle {
+            background: none;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .password-toggle:focus {
+            outline: 2px solid #FF6F61;
+            outline-offset: 2px;
+            border-radius: 3px;
+        }
+
+        /* Button Styles */
+        .login-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .login-btn:hover::before {
+            left: 100%;
+        }
+
+        .login-btn:active {
+            transform: translateY(0);
+        }
+
+        .login-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        /* Error Message */
+        .error-message {
+            background: #fee;
+            color: var(--error-color);
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--error-color);
+            font-size: 14px;
+            display: none;
+        }
+
+        /* Help Section */
+        .help-section {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .help-text {
+            font-size: 13px;
+            color: #78909c;
+            margin-bottom: 15px;
+        }
+
+        .help-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .help-btn {
+            padding: 8px 16px;
+            background: #f5f5f5;
+            color: #546e7a;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 1px solid #e0e0e0;
+        }
+
+        .help-btn:hover {
+            background: #2196F3;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+            text-decoration: none;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Animations */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .shake {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .login-container {
+                margin: 20px;
+                padding: 30px 25px;
+            }
+            
+            .help-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            .login-container {
+                background: rgba(255, 255, 255, 0.95);
+                color: #e0e0e0;
+            }
+            
+            .form-group input {
+                background: #b6b6b6;
+                color: #000000;
+            }
+        }
+    </style>
+</head>
+<body>    
+    <div class="login-container">
+        <div class="logo-section">
+            <div class="logo">
+                <img src="img/apotek.jpg" alt="Logo Apotek Indonesia" loading="lazy">
+            </div>
+            <h1 class="system-title">Apotek Indonesia</h1>
+            <p class="system-subtitle">Login Sebagai Pasien</p>
+        </div>
+
+        <div class="error-message" id="errorMessage" role="alert">
+            Username atau password salah. Silakan coba lagi.
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        placeholder="Masukkan Nama Anda" 
+                        autocomplete="username"
+                        required
+                        aria-describedby="username-help"
+                    >
+                    <span class="input-icon" aria-hidden="true"><i class="fas fa-user"></i></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-wrapper">
+                    <input type="password" id="password" name="password" placeholder="Masukkan Nomer Telepon" autocomplete="current-password" required aria-describedby="password-help">
+                    <button type="button" class="input-icon password-toggle" onclick="togglePassword()" aria-label="Toggle password visibility">
+                        <i class="fas fa-eye" id="passwordToggleIcon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <button type="submit" class="login-btn">
+                Masuk
+            </button>
+        </form>
+
+        <div class="help-section">
+            <p class="help-text">Butuh bantuan untuk mengakses akun Anda?</p>
+            <div class="help-buttons">
+                <a href="tel:+62xxx" class="help-btn" aria-label="Hubungi apotek via telepon">📞 Hubungi Apotek</a>
+                <a href="#help" class="help-btn" aria-label="Bantuan login">❓ Bantuan Login</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 HosterWeb. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        // Performance optimized JavaScript
+        (function() {
+            'use strict';
+            
+            // Cache DOM elements
+            const elements = {
+                passwordInput: document.getElementById('password'),
+                toggleIcon: document.getElementById('passwordToggleIcon'),
+                toggleButton: document.querySelector('.password-toggle'),
+                loginForm: document.getElementById('loginForm'),
+                errorMessage: document.getElementById('errorMessage'),
+                loginBtn: document.querySelector('.login-btn'),
+                loginContainer: document.querySelector('.login-container'),
+                usernameInput: document.getElementById('username')
+            };
+
+            // Toggle password visibility
+            window.togglePassword = function() {
+                const { passwordInput, toggleIcon } = elements;
+                
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    toggleIcon.className = 'fas fa-eye-slash';
+                    elements.toggleButton.setAttribute('aria-label', 'Hide password');
+                } else {
+                    passwordInput.type = 'password';
+                    toggleIcon.className = 'fas fa-eye';
+                    elements.toggleButton.setAttribute('aria-label', 'Show password');
+                }
+            };
+
+            // Form submission handler
+            elements.loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const username = elements.usernameInput.value.trim();
+                const password = elements.passwordInput.value.trim();
+                
+                // Reset states
+                elements.errorMessage.style.display = 'none';
+                elements.loginContainer.classList.remove('shake');
+                
+                // Validation
+                if (!username || !password) {
+                    showError('Mohon lengkapi semua field');
+                    return;
+                }
+                
+                // Show loading state
+                setLoadingState(true);
+                
+                // Simulate login process with better UX
+                setTimeout(() => {
+                    if (username.toLowerCase() === 'admin' && password === 'admin123') {
+                        handleLoginSuccess();
+                    } else {
+                        handleLoginError('Username atau password salah');
+                    }
+                }, Math.random() * 1000 + 800); // 800-1800ms realistic delay
+            });
+
+            function setLoadingState(loading) {
+                elements.loginBtn.disabled = loading;
+                elements.loginBtn.innerHTML = loading ? 
+                    '<span style="opacity: 0.7;">⏳ Memproses...</span>' : 'Masuk';
+            }
+
+            function handleLoginSuccess() {
+                elements.loginBtn.innerHTML = '✅ Berhasil! Mengalihkan...';
+                elements.loginBtn.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
+                
+                setTimeout(() => {
+                    // Replace alert with better UX
+                    if (confirm('Login berhasil! Lanjut ke dashboard?')) {
+                        // Simulate redirect
+                        console.log('Redirecting to dashboard...');
+                        // window.location.href = 'dashboard.html';
+                    }
+                    resetForm();
+                }, 1200);
+            }
+
+            function handleLoginError(message) {
+                showError(message);
+                elements.loginContainer.classList.add('shake');
+                setLoadingState(false);
+                
+                // Reset shake animation
+                setTimeout(() => {
+                    elements.loginContainer.classList.remove('shake');
+                }, 500);
+            }
+
+            function showError(message) {
+                elements.errorMessage.textContent = message;
+                elements.errorMessage.style.display = 'block';
+                elements.errorMessage.focus();
+            }
+
+            function resetForm() {
+                setLoadingState(false);
+                elements.loginBtn.style.background = '';
+                elements.usernameInput.focus();
+            }
+
+            // Enhanced input interactions
+            Object.values(elements).forEach(el => {
+                if (el && el.tagName === 'INPUT') {
+                    el.addEventListener('focus', function() {
+                        this.parentElement.style.transform = 'scale(1.02)';
+                    });
+                    
+                    el.addEventListener('blur', function() {
+                        this.parentElement.style.transform = 'scale(1)';
+                    });
+                }
+            });
+
+            // Keyboard navigation improvements
+            elements.toggleButton.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    togglePassword();
+                }
+            });
+
+            // Auto-focus with better UX
+            window.addEventListener('load', function() {
+                setTimeout(() => elements.usernameInput.focus(), 100);
+            });
+
+            // Prevent form resubmission
+            window.addEventListener('pageshow', function(e) {
+                if (e.persisted) {
+                    resetForm();
+                }
+            });
+
+        })();
+    </script>
+</body>
+</html>
