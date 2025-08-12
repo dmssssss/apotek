@@ -436,156 +436,155 @@
     </div>
 
     <script>
-        // Performance optimized JavaScript
-        (function() {
-            'use strict';
+    // Performance optimized JavaScript
+    (function() {
+        'use strict';
+        
+        // Cache DOM elements
+        const elements = {
+            passwordInput: document.getElementById('password'),
+            toggleIcon: document.getElementById('passwordToggleIcon'),
+            toggleButton: document.querySelector('.password-toggle'),
+            loginForm: document.getElementById('loginForm'),
+            errorMessage: document.getElementById('errorMessage'),
+            successMessage: document.getElementById('successMessage'),
+            loginBtn: document.querySelector('.login-btn'),
+            loginContainer: document.querySelector('.login-container'),
+            usernameInput: document.getElementById('username')
+        };
+
+        // Toggle password visibility
+        window.togglePassword = function() {
+            const { passwordInput, toggleIcon } = elements;
             
-            // Cache DOM elements
-            const elements = {
-                passwordInput: document.getElementById('password'),
-                toggleIcon: document.getElementById('passwordToggleIcon'),
-                toggleButton: document.querySelector('.password-toggle'),
-                loginForm: document.getElementById('loginForm'),
-                errorMessage: document.getElementById('errorMessage'),
-                successMessage: document.getElementById('successMessage'),
-                loginBtn: document.querySelector('.login-btn'),
-                loginContainer: document.querySelector('.login-container'),
-                usernameInput: document.getElementById('username')
-            };
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.className = 'fas fa-eye-slash';
+                elements.toggleButton.setAttribute('aria-label', 'Hide password');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.className = 'fas fa-eye';
+                elements.toggleButton.setAttribute('aria-label', 'Show password');
+            }
+        };
 
-            // Toggle password visibility
-            window.togglePassword = function() {
-                const { passwordInput, toggleIcon } = elements;
-                
-                if (passwordInput.type === 'password') {
-                    passwordInput.type = 'text';
-                    toggleIcon.className = 'fas fa-eye-slash';
-                    elements.toggleButton.setAttribute('aria-label', 'Hide password');
-                } else {
-                    passwordInput.type = 'password';
-                    toggleIcon.className = 'fas fa-eye';
-                    elements.toggleButton.setAttribute('aria-label', 'Show password');
-                }
-            };
-
-            // Form submission handler
-            elements.loginForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const username = elements.usernameInput.value.trim();
-                const password = elements.passwordInput.value.trim();
-                
-                // Reset states
-                hideMessages();
-                elements.loginContainer.classList.remove('shake');
-                
-                // Validation
-                if (!username || !password) {
-                    showError('Mohon lengkapi semua field');
-                    return;
-                }
-                
-                // Show loading state
-                setLoadingState(true);
-                
-                // Simulate login process
-                setTimeout(() => {
-                    // For demo purposes, accept any non-empty credentials
-                    // In production, validate against actual user database
+        // Form submission handler
+        elements.loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = elements.usernameInput.value.trim();
+            const password = elements.passwordInput.value.trim();
+            
+            // Reset states
+            hideMessages();
+            elements.loginContainer.classList.remove('shake');
+            
+            // Show loading state
+            setLoadingState(true);
+            
+            // Simulate login process with specific credentials
+            setTimeout(() => {
+                // Perubahan utama ada di sini
+                // Cek kredensial yang diminta: username 'pasien' dan password '08123'
+                if (username === 'pasien' && password === '08123') {
                     handleLoginSuccess();
-                }, Math.random() * 1000 + 800); // 800-1800ms realistic delay
-            });
-
-            function setLoadingState(loading) {
-                elements.loginBtn.disabled = loading;
-                elements.loginBtn.innerHTML = loading ? 
-                    '<i class="fas fa-spinner fa-spin"></i> Memproses...' : 'Masuk';
-            }
-
-            function handleLoginSuccess() {
-                // Show success message
-                showSuccess('Login berhasil! Mengalihkan ke dashboard...');
-                
-                // Update button appearance
-                elements.loginBtn.innerHTML = '<i class="fas fa-check"></i> Berhasil!';
-                elements.loginBtn.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
-                
-                // Redirect after delay
-                setTimeout(() => {
-                    window.location.href = 'tampilan pasien/dashboard_pasien.html';
-                }, 1500);
-            }
-
-            function handleLoginError(message) {
-                showError(message);
-                elements.loginContainer.classList.add('shake');
-                setLoadingState(false);
-                
-                // Reset shake animation
-                setTimeout(() => {
-                    elements.loginContainer.classList.remove('shake');
-                }, 500);
-            }
-
-            function showError(message) {
-                hideMessages();
-                elements.errorMessage.textContent = message;
-                elements.errorMessage.style.display = 'block';
-                elements.errorMessage.focus();
-            }
-
-            function showSuccess(message) {
-                hideMessages();
-                elements.successMessage.textContent = message;
-                elements.successMessage.style.display = 'block';
-            }
-
-            function hideMessages() {
-                elements.errorMessage.style.display = 'none';
-                elements.successMessage.style.display = 'none';
-            }
-
-            function resetForm() {
-                setLoadingState(false);
-                elements.loginBtn.style.background = '';
-                elements.loginBtn.innerHTML = 'Masuk';
-                hideMessages();
-            }
-
-            // Enhanced input interactions
-            Object.values(elements).forEach(el => {
-                if (el && el.tagName === 'INPUT') {
-                    el.addEventListener('focus', function() {
-                        this.parentElement.style.transform = 'scale(1.02)';
-                    });
-                    
-                    el.addEventListener('blur', function() {
-                        this.parentElement.style.transform = 'scale(1)';
-                    });
+                } else {
+                    handleLoginError('Username atau password salah. Silakan coba lagi.');
                 }
-            });
+            }, Math.random() * 1000 + 800); // 800-1800ms realistic delay
+        });
 
-            // Keyboard navigation improvements
-            elements.toggleButton.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    togglePassword();
-                }
-            });
+        function setLoadingState(loading) {
+            elements.loginBtn.disabled = loading;
+            elements.loginBtn.innerHTML = loading ? 
+                '<i class="fas fa-spinner fa-spin"></i> Memproses...' : 'Masuk';
+        }
 
-            // Auto-focus with better UX
-            window.addEventListener('load', function() {
-                setTimeout(() => elements.usernameInput.focus(), 100);
-            });
+        function handleLoginSuccess() {
+            // Show success message
+            showSuccess('Login berhasil! Mengalihkan ke dashboard...');
+            
+            // Update button appearance
+            elements.loginBtn.innerHTML = '<i class="fas fa-check"></i> Berhasil!';
+            elements.loginBtn.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
+            
+            // Redirect after delay
+            setTimeout(() => {
+                window.location.href = 'tampilan pasien/dashboard_pasien.html';
+            }, 1500);
+        }
 
-            // Prevent form resubmission
-            window.addEventListener('pageshow', function(e) {
-                if (e.persisted) {
-                    resetForm();
-                }
-            });
+        function handleLoginError(message) {
+            showError(message);
+            elements.loginContainer.classList.add('shake');
+            setLoadingState(false);
+            
+            // Reset shake animation
+            setTimeout(() => {
+                elements.loginContainer.classList.remove('shake');
+            }, 500);
+        }
 
-        })();
-    </script>
+        function showError(message) {
+            hideMessages();
+            elements.errorMessage.textContent = message;
+            elements.errorMessage.style.display = 'block';
+            elements.errorMessage.focus();
+        }
+
+        function showSuccess(message) {
+            hideMessages();
+            elements.successMessage.textContent = message;
+            elements.successMessage.style.display = 'block';
+        }
+
+        function hideMessages() {
+            elements.errorMessage.style.display = 'none';
+            elements.successMessage.style.display = 'none';
+        }
+
+        function resetForm() {
+            setLoadingState(false);
+            elements.loginBtn.style.background = '';
+            elements.loginBtn.innerHTML = 'Masuk';
+            hideMessages();
+        }
+
+        // Enhanced input interactions
+        Object.values(elements).forEach(el => {
+            if (el && el.tagName === 'INPUT') {
+                el.addEventListener('focus', function() {
+                    this.parentElement.style.transform = 'scale(1.02)';
+                });
+                
+                el.addEventListener('blur', function() {
+                    this.parentElement.style.transform = 'scale(1)';
+                });
+            }
+        });
+
+        // Keyboard navigation improvements
+        elements.toggleButton.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                togglePassword();
+            }
+        });
+
+        // Auto-focus with better UX
+        window.addEventListener('load', function() {
+            setTimeout(() => elements.usernameInput.focus(), 100);
+        });
+
+        // Prevent form resubmission
+        window.addEventListener('pageshow', function(e) {
+            if (e.persisted) {
+                resetForm();
+            }
+        });
+
+    })();
+</script>
+
 </body>
 </html>
