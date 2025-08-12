@@ -262,6 +262,18 @@
             display: none;
         }
 
+        /* Success Message */
+        .success-message {
+            background: #f0fff0;
+            color: var(--success-color);
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--success-color);
+            font-size: 14px;
+            display: none;
+        }
+
         /* Help Section */
         .help-section {
             text-align: center;
@@ -374,6 +386,10 @@
             Username atau password salah. Silakan coba lagi.
         </div>
 
+        <div class="success-message" id="successMessage" role="alert">
+            Login berhasil! Mengalihkan ke dashboard...
+        </div>
+
         <form id="loginForm">
             <div class="form-group">
                 <label for="username">Username</label>
@@ -431,6 +447,7 @@
                 toggleButton: document.querySelector('.password-toggle'),
                 loginForm: document.getElementById('loginForm'),
                 errorMessage: document.getElementById('errorMessage'),
+                successMessage: document.getElementById('successMessage'),
                 loginBtn: document.querySelector('.login-btn'),
                 loginContainer: document.querySelector('.login-container'),
                 usernameInput: document.getElementById('username')
@@ -459,7 +476,7 @@
                 const password = elements.passwordInput.value.trim();
                 
                 // Reset states
-                elements.errorMessage.style.display = 'none';
+                hideMessages();
                 elements.loginContainer.classList.remove('shake');
                 
                 // Validation
@@ -471,35 +488,32 @@
                 // Show loading state
                 setLoadingState(true);
                 
-                // Simulate login process with better UX
+                // Simulate login process
                 setTimeout(() => {
-                    if (username.toLowerCase() === 'admin' && password === 'admin123') {
-                        handleLoginSuccess();
-                    } else {
-                        handleLoginError('Username atau password salah');
-                    }
+                    // For demo purposes, accept any non-empty credentials
+                    // In production, validate against actual user database
+                    handleLoginSuccess();
                 }, Math.random() * 1000 + 800); // 800-1800ms realistic delay
             });
 
             function setLoadingState(loading) {
                 elements.loginBtn.disabled = loading;
                 elements.loginBtn.innerHTML = loading ? 
-                    '<span style="opacity: 0.7;">⏳ Memproses...</span>' : 'Masuk';
+                    '<i class="fas fa-spinner fa-spin"></i> Memproses...' : 'Masuk';
             }
 
             function handleLoginSuccess() {
-                elements.loginBtn.innerHTML = '✅ Berhasil! Mengalihkan...';
+                // Show success message
+                showSuccess('Login berhasil! Mengalihkan ke dashboard...');
+                
+                // Update button appearance
+                elements.loginBtn.innerHTML = '<i class="fas fa-check"></i> Berhasil!';
                 elements.loginBtn.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
                 
+                // Redirect after delay
                 setTimeout(() => {
-                    // Replace alert with better UX
-                    if (confirm('Login berhasil! Lanjut ke dashboard?')) {
-                        // Simulate redirect
-                        console.log('Redirecting to dashboard...');
-                        // window.location.href = 'dashboard.html';
-                    }
-                    resetForm();
-                }, 1200);
+                    window.location.href = 'tampilan pasien/dashboard_pasien.html';
+                }, 1500);
             }
 
             function handleLoginError(message) {
@@ -514,15 +528,28 @@
             }
 
             function showError(message) {
+                hideMessages();
                 elements.errorMessage.textContent = message;
                 elements.errorMessage.style.display = 'block';
                 elements.errorMessage.focus();
             }
 
+            function showSuccess(message) {
+                hideMessages();
+                elements.successMessage.textContent = message;
+                elements.successMessage.style.display = 'block';
+            }
+
+            function hideMessages() {
+                elements.errorMessage.style.display = 'none';
+                elements.successMessage.style.display = 'none';
+            }
+
             function resetForm() {
                 setLoadingState(false);
                 elements.loginBtn.style.background = '';
-                elements.usernameInput.focus();
+                elements.loginBtn.innerHTML = 'Masuk';
+                hideMessages();
             }
 
             // Enhanced input interactions
