@@ -17,6 +17,186 @@
     <link rel="stylesheet"href="../plugins/daterangepicker/daterangepicker-bs3.css"/>
     <link rel="stylesheet" href="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"/>
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+      .content-wrapper {
+        background: linear-gradient(135deg, #f8f9fc 0%, #e8f2ff 100%);
+      }
+      
+      .card-gradient-primary {
+        background: linear-gradient(135deg, #16a5f8 0%, #16a5f8 100%);
+        color: white;
+      }
+      
+      .card-gradient-success {
+        background: linear-gradient(135deg,#16a5f8 0%, #16a5f8 100%);
+        color: white;
+      }
+      
+      .card-gradient-info {
+        background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        color: white;
+      }
+      
+      .form-section {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .form-section:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+      }
+      
+      .section-header {
+        padding: 20px 25px;
+        margin: 0;
+        color: white;
+        font-weight: 600;
+      }
+      
+      .section-body {
+        padding: 25px;
+      }
+      
+      .form-control {
+        border-radius: 8px;
+        border: 2px solid #e3e6f0;
+        transition: all 0.3s ease;
+      }
+      
+      .form-control:focus {
+        border-color: #16a5f8;
+        box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.15);
+      }
+      
+      .btn {
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+      
+      .btn-primary {
+        background: linear-gradient(135deg, #16a5f8 0%, #16a5f8 100%);
+        border: none;
+      }
+      
+      .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+      }
+      
+      .btn-success {
+        background: linear-gradient(135deg, #16a5f8 0%, #16a5f8 100%);
+        border: none;
+      }
+      
+      .btn-success:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 15px rgba(17, 153, 142, 0.3);
+      }
+      
+      .table-modern {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      }
+      
+      .table-modern thead th {
+        background: linear-gradient(135deg, #16a5f8 0%, #16a5f8 100%);
+        color: white;
+        font-weight: 600;
+        border: none;
+        padding: 15px;
+      }
+      
+      .table-modern tbody tr:hover {
+        background-color: #f8f9fc;
+        transform: scale(1.01);
+        transition: all 0.2s ease;
+      }
+      
+      .badge-modern {
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+      
+      .stats-card {
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+      }
+      
+      .stats-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      }
+      
+      .stats-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        background: linear-gradient(135deg, #16a5f8 0%, #16a5f8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .floating-action {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+      }
+      
+      .floating-action .btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      }
+      
+      .input-group-text {
+        background: linear-gradient(135deg, #16a5f8 0%, #16a5f8 100%);
+        color: white;
+        border: none;
+      }
+      
+      .progress-modern {
+        height: 6px;
+        border-radius: 3px;
+        background-color: #e3e6f0;
+      }
+      
+      .progress-bar-modern {
+        background: linear-gradient(90deg, #16a5f8 0%, #16a5f8 100%);
+        border-radius: 3px;
+      }
+      
+      .modal-modern .modal-content {
+        border-radius: 15px;
+        border: none;
+        box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+      }
+      
+      .modal-modern .modal-header {
+        border-radius: 15px 15px 0 0;
+        border-bottom: none;
+        background: linear-gradient(135deg, #16a5f8 0%, #16a5f8 100%);
+        color: white;
+      }
+    </style>
   </head>
 
   <body class="hold-transition skin-blue sidebar-mini">
@@ -40,7 +220,7 @@
              <ul class="nav navbar-nav">
               <li >
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="fa fa-user"></i> User : Admin</a>
+                  <i class="fa fa-user"></i> User : Pasien</a>
                 </a>
               </li>
               <li>
@@ -81,16 +261,1038 @@
       </aside>
 
       <!-- konten mulai -->
+<<<<<<< Updated upstream
        
+=======
+       <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+        <!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-4">
+            <div class="col-sm-6">
+                <h1 class="m-0" style="font-weight: 700; color: #16a5f8;">
+                    <i class="fas fa-notes-medical"></i> Manajemen Riwayat Kesehatan
+                </h1>
+                <p class="text-muted">Kelola data riwayat kesehatan pasien dengan mudah dan terorganisir</p>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right" style="background: white; border-radius: 20px; padding: 10px 20px;">
+                    <li class="breadcrumb-item"><a href="dashboard.php" style="color: #16a5f8;">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="menu_pasien.php" style="color: #16a5f8;">Menu Pasien</a></li>
+                    <li class="breadcrumb-item active">Input Data Riwayat Kesehatan</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Quick Stats Cards -->
+        <div class="row mb-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-card">
+                    <div class="stats-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4 style="color: #000000; font-weight: 700;">127</h4>
+                    <p style="color: #6c757d; margin: 0;">Total Pasien</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-card">
+                    <div class="stats-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h4 style="color: #000000; font-weight: 700;">89</h4>
+                    <p style="color: #6c757d; margin: 0;">Riwayat Tersimpan</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-card">
+                    <div class="stats-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h4 style="color: #000000; font-weight: 700;">1,234</h4>
+                    <p style="color: #6c757d; margin: 0;">Total Transaksi Obat</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-card">
+                    <div class="stats-icon">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <h4 style="color: #000000; font-weight: 700;">12</h4>
+                    <p style="color: #6c757d; margin: 0;">Hari Ini</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        
+        <!-- Form Input Riwayat Kesehatan -->
+        <div class="form-section">
+            <div class="section-header card-gradient-primary">
+                <h3 style="margin: 0;"><i class="fas fa-clipboard-list"></i> Form Input Data Riwayat Kesehatan</h3>
+                <p style="margin: 5px 0 0 0; opacity: 0.9;">Lengkapi informasi kesehatan pasien dengan akurat</p>
+            </div>
+            
+            <div class="section-body">
+                <form id="formRiwayatKesehatan" method="POST" action="proses_riwayat.php">
+                    
+                    <!-- Data Pasien -->
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 style="color: #16a5f8; font-weight: 600; border-bottom: 2px solid #e3e6f0; padding-bottom: 10px;">
+                                <i class="fas fa-user-plus"></i> Informasi Pasien
+                            </h5>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="no_member" style="font-weight: 600; color: #000000;">
+                                    <i class="fas fa-id-card text-primary"></i> No. Member <span class="text-danger">*</span>
+                                </label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="no_member" name="no_member" 
+                                           placeholder="Contoh: M001" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="nama_pasien" style="font-weight: 600; color:#000000;">
+                                    <i class="fas fa-user text-success"></i> Nama Lengkap Pasien <span class="text-danger">*</span>
+                                </label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="nama_pasien" name="nama_pasien" 
+                                           placeholder="Masukkan nama lengkap pasien" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="no_telp" style="font-weight: 600; color: #000000;">
+                                    <i class="fas fa-phone text-info"></i> No. Telepon
+                                </label>
+                                <div class="input-group">
+                                    <input type="tel" class="form-control" id="no_telp" name="no_telp" 
+                                           placeholder="08xxxxxxxxxx">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="tanggal_pemeriksaan" style="font-weight: 600; color: #000000;">
+                                    <i class="fas fa-calendar-alt text-warning"></i> Tanggal Pemeriksaan <span class="text-danger">*</span>
+                                </label>
+                                <div class="input-group">
+                                    <input type="date" class="form-control" id="tanggal_pemeriksaan" 
+                                           name="tanggal_pemeriksaan" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Riwayat Kesehatan -->
+                    <div class="row mt-4">
+                        <div class="col-12 mb-3">
+                            <h5 style="color: #16a5f8; font-weight: 600; border-bottom: 2px solid #e3e6f0; padding-bottom: 10px;">
+                                <i class="fas fa-notes-medical"></i> Data Riwayat Kesehatan
+                            </h5>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="riwayat_penyakit" style="font-weight: 600; color: #495057;">
+                                    <i class="fas fa-file-medical-alt text-danger"></i> Riwayat Penyakit <span class="text-danger">*</span>
+                                </label>
+                                <textarea class="form-control" id="riwayat_penyakit" name="riwayat_penyakit" rows="4" 
+                                          placeholder="Jelaskan riwayat penyakit yang pernah dialami pasien secara detail..." required
+                                          style="resize: vertical;"></textarea>
+                                <small class="form-text text-muted">
+                                    <i class="fas fa-info-circle"></i> Jelaskan riwayat penyakit secara kronologis dan detail
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="riwayat_alergi" style="font-weight: 600; color: #495057;">
+                                    <i class="fas fa-exclamation-triangle text-warning"></i> Riwayat Alergi
+                                </label>
+                                <textarea class="form-control" id="riwayat_alergi" name="riwayat_alergi" rows="3" 
+                                          placeholder="Sebutkan alergi terhadap obat, makanan, atau zat tertentu..."
+                                          style="resize: vertical;"></textarea>
+                                <small class="form-text text-muted">Kosongkan jika tidak ada alergi</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="kondisi_kesehatan_terkini" style="font-weight: 600; color: #495057;">
+                                    <i class="fas fa-heartbeat text-success"></i> Kondisi Kesehatan Terkini
+                                </label>
+                                <select class="form-control" id="kondisi_kesehatan_terkini" name="kondisi_kesehatan_terkini">
+                                    <option value="">-- Pilih Kondisi Kesehatan --</option>
+                                    <option value="sehat">✅ Sehat</option>
+                                    <option value="sakit_ringan">🟡 Sakit Ringan</option>
+                                    <option value="sakit_sedang">🟠 Sakit Sedang</option>
+                                    <option value="sakit_berat">🔴 Sakit Berat</option>
+                                    <option value="dalam_perawatan">🏥 Dalam Perawatan</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="catatan_tambahan" style="font-weight: 600; color: #495057;">
+                                    <i class="fas fa-sticky-note text-info"></i> Catatan Tambahan
+                                </label>
+                                <textarea class="form-control" id="catatan_tambahan" name="catatan_tambahan" rows="3" 
+                                          placeholder="Catatan khusus, rekomendasi, atau informasi penting lainnya..."
+                                          style="resize: vertical;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Action Buttons -->
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg" style="margin: 0 10px;">
+                            <i class="fas fa-save"></i> Simpan Data Riwayat
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary btn-lg" onclick="resetForm()" style="margin: 0 10px;">
+                            <i class="fas fa-undo"></i> Reset Form
+                        </button>
+                        <a href="menu_pasien.php" class="btn btn-outline-primary btn-lg" style="margin: 0 10px;">
+                            <i class="fas fa-arrow-left"></i> Kembali ke Menu
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Input Pembelian Obat Section -->
+        <div class="form-section">
+            <div class="section-header card-gradient-success">
+                <h3 style="margin: 0;"><i class="fas fa-pills"></i> Input Pembelian Obat</h3>
+                <p style="margin: 5px 0 0 0; opacity: 0.9;">Catat pembelian obat pasien untuk tracking yang lebih baik</p>
+            </div>
+            
+            <div class="section-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="nama_obat" style="font-weight: 600; color: #495057;">
+                                <i class="fas fa-capsules"></i> Nama Obat
+                            </label>
+                            <input type="text" class="form-control" id="nama_obat" name="nama_obat" 
+                                   placeholder="Cth: Paracetamol 500mg">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="jumlah_obat" style="font-weight: 600; color: #495057;">
+                                <i class="fas fa-sort-numeric-up"></i> Jumlah
+                            </label>
+                            <input type="number" class="form-control" id="jumlah_obat" name="jumlah_obat" 
+                                   placeholder="0" min="1">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="satuan_obat" style="font-weight: 600; color: #495057;">
+                                <i class="fas fa-balance-scale"></i> Satuan
+                            </label>
+                            <select class="form-control" id="satuan_obat" name="satuan_obat">
+                                <option value="">Pilih</option>
+                                <option value="tablet">💊 Tablet</option>
+                                <option value="kapsul">💊 Kapsul</option>
+                                <option value="sirup">🍯 Sirup</option>
+                                <option value="salep">🧴 Salep</option>
+                                <option value="ampul">💉 Ampul</option>
+                                <option value="botol">🍼 Botol</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="harga_obat" style="font-weight: 600; color: #495057;">
+                                <i class="fas fa-money-bill-wave"></i> Harga Satuan
+                            </label>
+                            <input type="number" class="form-control" id="harga_obat" name="harga_obat" 
+                                   placeholder="0" min="0">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label style="color: transparent;">Action</label>
+                            <button type="button" class="btn btn-success btn-block" onclick="tambahObat()">
+                                <i class="fas fa-plus"></i> Tambah ke Daftar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+               <div class="row mt-3">
+    <div class="col-md-12">
+        <h5 style="color: #11998e; font-weight: 600; margin-bottom: 20px;">
+            <i class="fas fa-list-ul"></i> Daftar Obat yang Dibeli
+        </h5>
+        <div class="table-responsive">
+            <table class="table table-modern" id="tabelObat">
+                <thead>
+                    <tr>
+                        <th width="40">No</th>
+                        <th>Nama Obat</th>
+                        <th width="80">Jumlah</th>
+                        <th width="80">Satuan</th>
+                        <th width="120">Harga Satuan</th>
+                        <th width="120">Total Harga</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyTabelObat">
+                    <tr id="noDataObat">
+                        <td colspan="6" class="text-center text-muted" style="padding: 40px;">
+                            <i class="fas fa-pills fa-3x" style="opacity: 0.3; margin-bottom: 15px;"></i><br>
+                            Belum ada obat yang ditambahkan
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot style="background: #f8f9fc;">
+                    <tr>
+                        <th colspan="5" class="text-right" style="font-size: 16px; color: #16a5f8;">
+                            <i class="fas fa-calculator"></i> Total Pembelian:
+                        </th>
+                        <th id="totalPembelian" style="font-size: 18px; color: #000000; font-weight: 700;">
+                            Rp 0
+                        </th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <input type="hidden" id="dataObat" name="data_obat" value="">
+    </div>
+</div>
+
+
+        <!-- Tabel Data Riwayat yang Sudah Tersimpan -->
+        <div class="form-section">
+    <div class="section-header card-gradient-info" style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <h3 style="margin: 0;">
+                <i class="fas fa-database"></i> Data Riwayat Kesehatan Tersimpan
+            </h3>
+            <p style="margin: 5px 0 0 0; opacity: 0.9;">Kelola dan lihat riwayat kesehatan yang sudah tersimpan</p>
+        </div>
+    </div> 
+       <div class="section-body" style="padding-bottom: 0; margin-bottom: 0;">
+            <button type="button" class="btn btn-warning" onclick="window.location.href='form_riwayat_kesehatan.php'">
+                <i class="fas fa-plus"></i> Tambah Data
+            </button>
+        </div> 
+            <div class="section-body">
+                <div class="table-responsive">
+                    <table class="table table-modern" id="tabelRiwayat">
+                        <thead>
+                            <tr>
+                                <th width="50">No</th>
+                                <th>No. Member</th>
+                                <th>Nama Pasien</th>
+                                <th>Tanggal</th>
+                                <th>Riwayat Penyakit</th>
+                                <th>Kondisi Terkini</th>
+                                <th>Total Pembelian</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Sample Data -->
+                            <tr>
+                                <td style="font-weight: 600;">1</td>
+                                <td><span class="badge badge-light" style="font-size: 11px;">M001</span></td>
+                                <td style="font-weight: 600; color: #495057;">Ahmad Sudirman</td>
+                                <td><i class="fas fa-calendar text-muted"></i> 15/08/2024</td>
+                                <td style="max-width: 200px;">
+                                    <span class="text-truncate d-inline-block" style="max-width: 100%;" 
+                                          title="Diabetes Mellitus, Hipertensi">
+                                        Diabetes Mellitus, Hipertensi
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="badge badge-modern" style="background: linear-gradient(135deg, #16a5f8, #16a5f8); color: white;">
+                                        <i class="fas fa-hospital"></i> Dalam Perawatan
+                                    </span>
+                                </td>
+                                <td>
+                                    <span style="color:#000000; font-weight: 700; font-size: 14px;">
+                                        <i class="fas fa-money-bill-wave"></i> Rp 125.000
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600;">2</td>
+                                <td><span class="badge badge-light" style="font-size: 11px;">M002</span></td>
+                                <td style="font-weight: 600; color: #495057;">Siti Rahayu</td>
+                                <td><i class="fas fa-calendar text-muted"></i> 12/08/2024</td>
+                                <td style="max-width: 200px;">
+                                    <span class="text-truncate d-inline-block" style="max-width: 100%;" 
+                                          title="Asma Bronkial">
+                                        Asma Bronkial
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="badge badge-modern" style="background: linear-gradient(135deg, #16a5f8, #16a5f8); color: white;">
+                                        <i class="fas fa-check-circle"></i> Sehat
+                                    </span>
+                                </td>
+                                <td>
+                                    <span style="color: #000000; font-weight: 700; font-size: 14px;">
+                                        <i class="fas fa-money-bill-wave"></i> Rp 75.000
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600;">3</td>
+                                <td><span class="badge badge-light" style="font-size: 11px;">M003</span></td>
+                                <td style="font-weight: 600; color: #495057;">Budi Santoso</td>
+                                <td><i class="fas fa-calendar text-muted"></i> 10/08/2024</td>
+                                <td style="max-width: 200px;">
+                                    <span class="text-truncate d-inline-block" style="max-width: 100%;" 
+                                          title="Gastritis">
+                                        Gastritis
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="badge badge-modern" style="background: linear-gradient(135deg, #3498db, #2980b9); color: white;">
+                                        <i class="fas fa-thermometer-half"></i> Sakit Ringan
+                                    </span>
+                                </td>
+                                <td>
+                                    <span style="color: #000000; font-weight: 700; font-size: 14px;">
+                                        <i class="fas fa-money-bill-wave"></i> Rp 45.000
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Floating Action Button -->
+<div class="floating-action">
+    <button class="btn btn-primary" onclick="scrollToTop()" title="Scroll to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</div>
+
+<!-- Modal Detail -->
+<div class="modal fade modal-modern" id="modalDetail" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="font-weight: 600;">
+                    <i class="fas fa-info-circle"></i> Detail Riwayat Kesehatan Pasien
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" style="color: white; opacity: 1;">
+                    <span style="font-size: 1.5rem;">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="detailContent" style="background: #f8f9fc;">
+                <!-- Content akan dimuat di sini -->
+            </div>
+            <div class="modal-footer" style="border-top: none; background: #f8f9fc;">
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">
+                    <i class="fas fa-times"></i> Tutup
+                </button>
+                <button type="button" class="btn btn-primary" onclick="printDetail()">
+                    <i class="fas fa-print"></i> Cetak Detail
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Success Toast -->
+<div id="successToast" style="position: fixed; top: 20px; right: 20px; z-index: 9999; display: none;">
+    <div class="alert alert-success alert-dismissible" style="border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+        <button type="button" class="close" onclick="hideToast()">
+            <span>&times;</span>
+        </button>
+        <i class="fas fa-check-circle"></i> <strong>Berhasil!</strong> Data telah disimpan.
+    </div>
+</div>
+</div>
+
+<script>
+$(document).ready(function() {
+    // Set tanggal hari ini sebagai default
+    document.getElementById('tanggal_pemeriksaan').valueAsDate = new Date();
+    
+    // Initialize DataTable with better styling
+    $('#tabelRiwayat').DataTable({
+        "responsive": true,
+        "lengthChange": true,
+        "autoWidth": false,
+        "pageLength": 10,
+        "dom": '<"row"<"col-sm-6"l><"col-sm-6"f>>rtip',
+        "language": {
+            "search": "🔍 Cari Data:",
+            "lengthMenu": "Tampilkan _MENU_ data per halaman",
+            "zeroRecords": "Tidak ada data yang ditemukan",
+            "info": "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
+            "infoEmpty": "Tidak ada data",
+            "infoFiltered": "(difilter dari _MAX_ total data)",
+            "paginate": {
+                "first": "Pertama",
+                "last": "Terakhir", 
+                "next": "Selanjutnya",
+                "previous": "Sebelumnya"
+            }
+        },
+        "columnDefs": [
+            { "targets": [0, 6, 7], "orderable": false }
+        ]
+    });
+    
+    // Form submit handler with better UX
+    $('#formRiwayatKesehatan').on('submit', function(e) {
+        e.preventDefault();
+        
+        // Show loading state
+        let submitBtn = $(this).find('button[type="submit"]');
+        let originalText = submitBtn.html();
+        submitBtn.html('<i class="fas fa-spinner fa-spin"></i> Menyimpan...');
+        submitBtn.prop('disabled', true);
+        
+        // Basic validation
+        if (this.checkValidity()) {
+            // Simulate API call delay
+            setTimeout(() => {
+                // Show success toast
+                showSuccessToast('Data riwayat kesehatan berhasil disimpan!');
+                
+                // Reset form
+                resetForm();
+                
+                // Reset button state
+                submitBtn.html(originalText);
+                submitBtn.prop('disabled', false);
+                
+                // In real implementation, send data to server
+                // $.ajax({ ... });
+            }, 1500);
+        } else {
+            showErrorAlert('Harap lengkapi semua field yang wajib diisi!');
+            submitBtn.html(originalText);
+            submitBtn.prop('disabled', false);
+        }
+    });
+
+    // Add smooth scrolling to form sections
+    $('html').css('scroll-behavior', 'smooth');
+});
+
+// Array untuk menyimpan data obat
+let daftarObat = [];
+let nomorObat = 1;
+
+function tambahObat() {
+    let namaObat = document.getElementById('nama_obat').value.trim();
+    let jumlahObat = document.getElementById('jumlah_obat').value;
+    let satuanObat = document.getElementById('satuan_obat').value;
+    let hargaObat = document.getElementById('harga_obat').value;
+    
+    // Validasi input dengan feedback yang lebih baik
+    if (!namaObat || !jumlahObat || !satuanObat || !hargaObat) {
+        showErrorAlert('Harap lengkapi semua field obat sebelum menambahkan!');
+        return;
+    }
+    
+    if (jumlahObat <= 0 || hargaObat <= 0) {
+        showErrorAlert('Jumlah dan harga harus lebih dari 0!');
+        return;
+    }
+    
+    // Check duplikasi obat
+    let existingObat = daftarObat.find(obat => obat.nama.toLowerCase() === namaObat.toLowerCase());
+    if (existingObat) {
+        if (confirm('Obat ini sudah ada dalam daftar. Apakah Anda ingin menggabungkan jumlahnya?')) {
+            existingObat.jumlah = parseInt(existingObat.jumlah) + parseInt(jumlahObat);
+            existingObat.total = existingObat.jumlah * parseInt(existingObat.harga);
+        } else {
+            return;
+        }
+    } else {
+        // Hitung total harga
+        let totalHarga = parseInt(jumlahObat) * parseInt(hargaObat);
+        
+        // Tambahkan ke array
+        let obat = {
+            id: nomorObat,
+            nama: namaObat,
+            jumlah: parseInt(jumlahObat),
+            satuan: satuanObat,
+            harga: parseInt(hargaObat),
+            total: totalHarga
+        };
+        
+        daftarObat.push(obat);
+        nomorObat++;
+    }
+    
+    // Update tampilan tabel
+    updateTabelObat();
+    
+    // Reset form obat dengan animasi
+    clearObatForm();
+    
+    // Show success feedback
+    showSuccessToast('Obat berhasil ditambahkan ke daftar!');
+}
+
+function hapusObat(id) {
+    if (confirm('Apakah Anda yakin ingin menghapus obat ini dari daftar?')) {
+        // Hapus dari array
+        daftarObat = daftarObat.filter(obat => obat.id !== id);
+        
+        // Update tampilan tabel
+        updateTabelObat();
+        
+        showSuccessToast('Obat berhasil dihapus dari daftar!');
+    }
+}
+
+function updateTabelObat() {
+    let tbody = document.getElementById('bodyTabelObat');
+    let totalPembelian = 0;
+    
+    // Kosongkan tbody
+    tbody.innerHTML = '';
+    
+    if (daftarObat.length === 0) {
+        tbody.innerHTML = `
+            <tr id="noDataObat">
+                <td colspan="7" class="text-center text-muted" style="padding: 40px;">
+                    <i class="fas fa-pills fa-3x" style="opacity: 0.3; margin-bottom: 15px; color: #dee2e6;"></i><br>
+                    <span style="font-size: 16px;">Belum ada obat yang ditambahkan</span><br>
+                    <small>Gunakan form di atas untuk menambah obat</small>
+                </td>
+            </tr>
+        `;
+    } else {
+        daftarObat.forEach((obat, index) => {
+            totalPembelian += obat.total;
+            
+            let row = `
+                <tr style="transition: all 0.2s ease;">
+                    <td style="font-weight: 600;">${index + 1}</td>
+                    <td>
+                        <span style="font-weight: 600; color: #495057;">${obat.nama}</span>
+                    </td>
+                    <td class="text-center">
+                        <span class="badge badge-light" style="font-size: 12px;">${obat.jumlah}</span>
+                    </td>
+                    <td class="text-center">
+                        <span class="badge badge-secondary" style="font-size: 11px;">${obat.satuan}</span>
+                    </td>
+                    <td class="text-right" style="color: #6c757d; font-weight: 500;">
+                        Rp ${parseInt(obat.harga).toLocaleString('id-ID')}
+                    </td>
+                    <td class="text-right" style="color: #11998e; font-weight: 700;">
+                        Rp ${obat.total.toLocaleString('id-ID')}
+                    </td>
+                    <td class="text-center">
+                        <button type="button" class="btn btn-outline-danger btn-sm" onclick="hapusObat(${obat.id})"
+                                style="border-radius: 20px;" title="Hapus obat">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            `;
+            tbody.innerHTML += row;
+        });
+    }
+    
+    // Update total pembelian dengan animasi
+    let totalElement = document.getElementById('totalPembelian');
+    totalElement.style.transform = 'scale(1.1)';
+    totalElement.textContent = 'Rp ' + totalPembelian.toLocaleString('id-ID');
+    
+    setTimeout(() => {
+        totalElement.style.transform = 'scale(1)';
+    }, 200);
+    
+    // Update hidden input untuk dikirim ke server
+    document.getElementById('dataObat').value = JSON.stringify(daftarObat);
+}
+
+function clearObatForm() {
+    document.getElementById('nama_obat').value = '';
+    document.getElementById('jumlah_obat').value = '';
+    document.getElementById('satuan_obat').value = '';
+    document.getElementById('harga_obat').value = '';
+    
+    // Focus ke nama obat untuk input berikutnya
+    document.getElementById('nama_obat').focus();
+}
+
+function resetForm() {
+    document.getElementById('formRiwayatKesehatan').reset();
+    document.getElementById('tanggal_pemeriksaan').valueAsDate = new Date();
+    daftarObat = [];
+    updateTabelObat();
+    
+    // Scroll to top of form
+    document.getElementById('formRiwayatKesehatan').scrollIntoView({ behavior: 'smooth' });
+}
+
+function lihatDetail(id) {
+    // Enhanced detail content with better styling
+    let detailHTML = `
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <div style="background: white; padding: 20px; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 3px 15px rgba(0,0,0,0.1);">
+                        <h5 style="color: #16a5f8; font-weight: 600; margin-bottom: 15px;">
+                            <i class="fas fa-user-circle"></i> Data Pasien
+                        </h5>
+                        <div class="row">
+                            <div class="col-6"><strong>No. Member:</strong></div>
+                            <div class="col-6"><span class="badge badge-primary">M001</span></div>
+                        </div>
+                        <hr style="margin: 10px 0;">
+                        <div class="row">
+                            <div class="col-6"><strong>Nama Lengkap:</strong></div>
+                            <div class="col-6">Ahmad Sudirman</div>
+                        </div>
+                        <hr style="margin: 10px 0;">
+                        <div class="row">
+                            <div class="col-6"><strong>No. Telepon:</strong></div>
+                            <div class="col-6"><i class="fas fa-phone text-success"></i> 081234567890</div>
+                        </div>
+                        <hr style="margin: 10px 0;">
+                        <div class="row">
+                            <div class="col-6"><strong>Tanggal Pemeriksaan:</strong></div>
+                            <div class="col-6"><i class="fas fa-calendar text-info"></i> 15 Agustus 2024</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div style="background: white; padding: 20px; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 3px 15px rgba(0,0,0,0.1);">
+                        <h5 style="color: #16a5f8; font-weight: 600; margin-bottom: 15px;">
+                            <i class="fas fa-heartbeat"></i> Status Kesehatan
+                        </h5>
+                        <div class="text-center" style="padding: 20px;">
+                            <div style="font-size: 3rem; color: #f39c12; margin-bottom: 10px;">
+                                <i class="fas fa-hospital"></i>
+                            </div>
+                            <span class="badge badge-modern" style="background: linear-gradient(135deg, #f39c12, #e67e22); color: white; font-size: 14px; padding: 10px 20px;">
+                                Dalam Perawatan
+                            </span>
+                            <p style="margin-top: 15px; color: #6c757d;">Memerlukan monitoring rutin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div style="background: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 3px 15px rgba(0,0,0,0.1);">
+                        <h5 style="color: #16a5f8; font-weight: 600; margin-bottom: 20px;">
+                            <i class="fas fa-file-medical-alt"></i> Riwayat Medis Detail
+                        </h5>
+                        
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <h6 style="color: #e74c3c; font-weight: 600;">
+                                    <i class="fas fa-disease"></i> Riwayat Penyakit:
+                                </h6>
+                                <div style="background: #fff5f5; padding: 15px; border-radius: 10px; border-left: 4px solid #e74c3c;">
+                                    <p style="margin: 0; line-height: 1.6;">
+                                        <strong>Diabetes Mellitus</strong> - Didiagnosis sejak tahun 2018, dengan kontrol gula darah rutin.<br>
+                                        <strong>Hipertensi</strong> - Mulai tahun 2020, menggunakan obat antihipertensi secara teratur.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6 style="color: #f39c12; font-weight: 600;">
+                                    <i class="fas fa-exclamation-triangle"></i> Riwayat Alergi:
+                                </h6>
+                                <div style="background: #fffbf0; padding: 15px; border-radius: 10px; border-left: 4px solid #f39c12;">
+                                    <p style="margin: 0;">Tidak ada alergi obat yang diketahui sampai saat ini.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h6 style="color: #3498db; font-weight: 600;">
+                                    <i class="fas fa-sticky-note"></i> Catatan Tambahan:
+                                </h6>
+                                <div style="background: #f0f8ff; padding: 15px; border-radius: 10px; border-left: 4px solid #3498db;">
+                                    <p style="margin: 0;">Monitoring gula darah setiap minggu. Kontrol tekanan darah rutin setiap bulan.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 3px 15px rgba(0,0,0,0.1);">
+                        <h5 style="color: #11998e; font-weight: 600; margin-bottom: 20px;">
+                            <i class="fas fa-pills"></i> Detail Pembelian Obat
+                        </h5>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-modern">
+                                <thead>
+                                    <tr>
+                                        <th>Nama Obat</th>
+                                        <th>Jumlah</th>
+                                        <th>Satuan</th>
+                                        <th>Harga Satuan</th>
+                                        <th>Total Harga</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="font-weight: 600;">Metformin 500mg</td>
+                                        <td class="text-center"><span class="badge badge-info">30</span></td>
+                                        <td class="text-center"><span class="badge badge-secondary">Tablet</span></td>
+                                        <td class="text-right">Rp 2.000</td>
+                                        <td class="text-right" style="color: #11998e; font-weight: 600;">Rp 60.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: 600;">Captopril 25mg</td>
+                                        <td class="text-center"><span class="badge badge-info">30</span></td>
+                                        <td class="text-center"><span class="badge badge-secondary">Tablet</span></td>
+                                        <td class="text-right">Rp 1.500</td>
+                                        <td class="text-right" style="color: #11998e; font-weight: 600;">Rp 45.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: 600;">Vitamin B Complex</td>
+                                        <td class="text-center"><span class="badge badge-info">20</span></td>
+                                        <td class="text-center"><span class="badge badge-secondary">Tablet</span></td>
+                                        <td class="text-right">Rp 1.000</td>
+                                        <td class="text-right" style="color: #11998e; font-weight: 600;">Rp 20.000</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot style="background: linear-gradient(135deg, #11998e, #16a5f8); color: white;">
+                                    <tr>
+                                        <th colspan="4" style="font-size: 16px;">
+                                            <i class="fas fa-calculator"></i> Total Pembelian Obat:
+                                        </th>
+                                        <th class="text-right" style="font-size: 18px; font-weight: 700;">
+                                            Rp 125.000
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        
+                        <!-- Progress bar untuk total pembelian -->
+                        <div style="margin-top: 20px;">
+                            <label style="font-weight: 600; color: #495057; margin-bottom: 10px;">Progress Pembelian:</label>
+                            <div class="progress progress-modern">
+                                <div class="progress-bar progress-bar-modern" role="progressbar" 
+                                     style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                                    65% dari target bulanan
+                                </div>
+                            </div>
+                            <small class="text-muted">Target pembelian bulanan: Rp 200.000</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    $('#detailContent').html(detailHTML);
+    $('#modalDetail').modal('show');
+}
+
+function editData(id) {
+    // Show loading animation
+    showInfoAlert('Memuat data untuk diedit...');
+    
+    // Simulate loading delay
+    setTimeout(() => {
+        showInfoAlert('Fitur edit akan mengisi form dengan data yang dipilih');
+        
+        // Scroll ke form dengan animasi smooth
+        $('html, body').animate({
+            scrollTop: $("#formRiwayatKesehatan").offset().top - 100
+        }, 800);
+        
+        // Highlight form
+        $('.form-section').first().css('box-shadow', '0 0 30px rgba(102, 126, 234, 0.3)');
+        setTimeout(() => {
+            $('.form-section').first().css('box-shadow', '0 8px 25px rgba(0,0,0,0.1)');
+        }, 2000);
+    }, 500);
+}
+
+function scrollToTop() {
+    $('html, body').animate({
+        scrollTop: 0
+    }, 600);
+}
+
+function showSuccessToast(message) {
+    let toast = document.getElementById('successToast');
+    toast.querySelector('.alert').innerHTML = `
+        <button type="button" class="close" onclick="hideToast()">
+            <span>&times;</span>
+        </button>
+        <i class="fas fa-check-circle"></i> <strong>Berhasil!</strong> ${message}
+    `;
+    toast.style.display = 'block';
+    
+    // Auto hide after 3 seconds
+    setTimeout(hideToast, 3000);
+}
+
+function showErrorAlert(message) {
+    alert('❌ Error: ' + message);
+}
+
+function showInfoAlert(message) {
+    alert('ℹ️ Info: ' + message);
+}
+
+function hideToast() {
+    document.getElementById('successToast').style.display = 'none';
+}
+
+function printDetail() {
+    window.print();
+}
+
+// Auto-save draft functionality (in memory)
+let draftData = {};
+
+function saveDraft() {
+    draftData = {
+        no_member: document.getElementById('no_member').value,
+        nama_pasien: document.getElementById('nama_pasien').value,
+        no_telp: document.getElementById('no_telp').value,
+        tanggal_pemeriksaan: document.getElementById('tanggal_pemeriksaan').value,
+        riwayat_penyakit: document.getElementById('riwayat_penyakit').value,
+        riwayat_alergi: document.getElementById('riwayat_alergi').value,
+        kondisi_kesehatan_terkini: document.getElementById('kondisi_kesehatan_terkini').value,
+        catatan_tambahan: document.getElementById('catatan_tambahan').value,
+        daftar_obat: [...daftarObat]
+    };
+    
+    showSuccessToast('Draft tersimpan otomatis!');
+}
+
+// Auto-save every 30 seconds
+setInterval(saveDraft, 30000);
+
+// Form validation with real-time feedback
+document.addEventListener('DOMContentLoaded', function() {
+    // Real-time validation
+    const requiredFields = ['no_member', 'nama_pasien', 'tanggal_pemeriksaan', 'riwayat_penyakit'];
+    
+    requiredFields.forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        if (field) {
+            field.addEventListener('blur', function() {
+                validateField(this);
+            });
+            
+            field.addEventListener('input', function() {
+                if (this.classList.contains('is-invalid')) {
+                    validateField(this);
+                }
+            });
+        }
+    });
+});
+
+function validateField(field) {
+    const value = field.value.trim();
+    
+    if (field.hasAttribute('required') && !value) {
+        field.classList.add('is-invalid');
+        field.classList.remove('is-valid');
+        showFieldError(field, 'Field ini wajib diisi');
+    } else {
+        field.classList.remove('is-invalid');
+        field.classList.add('is-valid');
+        hideFieldError(field);
+    }
+}
+
+function showFieldError(field, message) {
+    // Remove existing error message
+    const existingError = field.parentNode.querySelector('.invalid-feedback');
+    if (existingError) {
+        existingError.remove();
+    }
+    
+    // Add new error message
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'invalid-feedback';
+    errorDiv.style.display = 'block';
+    errorDiv.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${message}`;
+    field.parentNode.appendChild(errorDiv);
+}
+
+function hideFieldError(field) {
+    const errorDiv = field.parentNode.querySelector('.invalid-feedback');
+    if (errorDiv) {
+        errorDiv.remove();
+    }
+}
+
+// Enhanced input formatters
+document.getElementById('no_telp').addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length > 0) {
+        if (value.startsWith('62')) {
+            value = '+' + value;
+        } else if (!value.startsWith('0') && !value.startsWith('+')) {
+            value = '0' + value;
+        }
+    }
+    e.target.value = value;
+});
+
+document.getElementById('nama_pasien').addEventListener('input', function(e) {
+    // Capitalize first letter of each word
+    e.target.value = e.target.value.replace(/\b\w/g, l => l.toUpperCase());
+});
+</script>
+
+>>>>>>> Stashed changes
       <!-- konten selesai -->
 
       <!-- footer -->
-     <footer class="main-footer ">
+     <footer class="main-footer" style="background: linear-gradient(135deg, #ffffff 0%, #fcfcfc 100%); color: rgb(0, 0, 0);">
         <div class="pull-right hidden-xs">
-          <i class="fa fa-calendar"></i> 07 Agustus 2025  &nbsp; <span id="waktu">12:09:07</span>   &nbsp;<i class="fa fa-desktop"></i> Alamat Server : <input style="width:150px" readonly value="#">
+          <i class="fa fa-calendar"></i> 07 Agustus 2025  &nbsp; <span id="waktu">12:09:07</span>   &nbsp;<i class="fa fa-desktop"></i> Alamat Server : <input style="width:150px; background: rgba(0, 0, 0, 0.2); border: none; color: rgb(0, 0, 0);" readonly value="#">
         <div id="session" ></div>
     </div>
-    <b>Manajemen Apotek 1.0</b> Copyright &copy; <a href="https://hosterweb.id/">Hosterweb Grup CV. Rizky Jaya Indosoft</a></footer>
+    <b>Manajemen Apotek 1.0</b> Copyright &copy; <a href="https://hosterweb.id/" style="color: #32aae2;">Hosterweb Grup CV. Rizky Jaya Indosoft</a></footer>
  
 </div>
       <!-- footer -->
