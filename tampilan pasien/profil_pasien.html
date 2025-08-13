@@ -17,6 +17,109 @@
     <link rel="stylesheet"href="../plugins/daterangepicker/daterangepicker-bs3.css"/>
     <link rel="stylesheet" href="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"/>
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    
+    <style>
+        .content-header {
+            padding: 15px;
+            margin: 0 0 20px 0;
+        }
+        
+        .profile-card {
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .profile-header {
+            background: linear-gradient(135deg, #3C8DBC 0%, #3C8DBC 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin: 0 auto 15px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .profile-avatar i {
+            font-size: 50px;
+            color: white;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        
+        .form-control {
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: #3C8DBC;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+        
+        .btn-save {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            border: none;
+            border-radius: 25px;
+            padding: 12px 40px;
+            font-weight: 600;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        .btn-save:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+            color: white;
+        }
+        
+        .alert {
+            border-radius: 10px;
+            border: none;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .medical-info {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .medical-info h4 {
+            color: #dc3545;
+            margin-bottom: 15px;
+        }
+        
+        .icon-label {
+            color: #3C8DBC;
+        }
+        
+        .required {
+            color: #dc3545;
+        }
+    </style>
   </head>
 
   <body class="hold-transition skin-blue sidebar-mini">
@@ -70,7 +173,7 @@
                 <i class="fa fa-bell"></i> <span> Pengingat</span>
               </a>
             </li>
-            <li>
+            <li class="active">
               <a href="profil_pasien.html">
                 <i class="fa fa-user"></i> <span> Profil </span>
               </a>
@@ -80,43 +183,217 @@
         </section>
       </aside>
 
-      <!-- konten mulai -->
-       <div class="content-wrapper">
+      <!-- Content Wrapper -->
+      <div class="content-wrapper">
+            <!-- Content Header -->
+            <section class="content-header">
+                <h1>
+                    <i class="fas fa-user-edit"></i>
+                    Profil Pasien
+                    <small>Kelola informasi pribadi Anda</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                    <li class="active">Profil</li>
+                </ol>
+            </section>
 
-       </div>
-      <!-- konten selesai -->
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <!-- Info Alert -->
+                    <div class="alert alert-info alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h4><i class="icon fas fa-info-circle"></i> Informasi Penting</h4>
+                        Pastikan semua data yang Anda masukkan akurat dan terkini. Informasi ini akan digunakan untuk memberikan pelayanan kesehatan yang optimal.
+                    </div>
+
+                    <!-- Success Alert (Hidden by default) -->
+                    <div class="alert alert-success alert-dismissible" id="successAlert" style="display: none;">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h4><i class="icon fas fa-check-circle"></i> Berhasil!</h4>
+                        Data profil berhasil disimpan dan akan segera diperbarui.
+                    </div>
+
+                    <!-- Profile Card -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card profile-card">
+                                <!-- Profile Header -->
+                                <div class="profile-header">
+                                    <div class="profile-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <h3 style="margin: 0; font-weight: 300;">Data Profil Pasien</h3>
+                                    <p style="margin: 5px 0 0 0; opacity: 0.9;">Lengkapi informasi pribadi Anda</p>
+                                </div>
+                                
+                                <!-- Form Body -->
+                                <div class="card-body" style="padding: 30px;">
+                                    <form id="profilForm">
+                                        <!-- Basic Information Section -->
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h4 style="color: #3C8DBC; margin-bottom: 20px; border-bottom: 2px solid #e9ecef; padding-bottom: 10px;">
+                                                    <i class="fas fa-id-card"></i> Informasi Dasar
+                                                </h4>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="noMember">
+                                                        <i class="fas fa-id-badge icon-label"></i>
+                                                        Nomor Member <span class="required">*</span>
+                                                    </label>
+                                                    <input type="text" 
+                                                           class="form-control" 
+                                                           id="noMember" 
+                                                           name="noMember" 
+                                                           placeholder="Contoh: APT001234" 
+                                                           required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="nama">
+                                                        <i class="fas fa-user icon-label"></i>
+                                                        Nama Lengkap <span class="required">*</span>
+                                                    </label>
+                                                    <input type="text" 
+                                                           class="form-control" 
+                                                           id="nama" 
+                                                           name="nama" 
+                                                           placeholder="Masukkan nama lengkap sesuai KTP" 
+                                                           required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Contact Information -->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="nomorTelp">
+                                                        <i class="fas fa-phone icon-label"></i>
+                                                        Nomor Telepon <span class="required">*</span>
+                                                    </label>
+                                                    <input type="tel" 
+                                                           class="form-control" 
+                                                           id="nomorTelp" 
+                                                           name="nomorTelp" 
+                                                           placeholder="08XX-XXXX-XXXX" 
+                                                           pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}"
+                                                           required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="email">
+                                                        <i class="fas fa-envelope icon-label"></i>
+                                                        Alamat Email
+                                                    </label>
+                                                    <input type="email" 
+                                                           class="form-control" 
+                                                           id="email" 
+                                                           name="email" 
+                                                           placeholder="nama@email.com">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="alamat">
+                                                        <i class="fas fa-map-marker-alt icon-label"></i>
+                                                        Alamat Lengkap
+                                                    </label>
+                                                    <textarea class="form-control" 
+                                                              id="alamat" 
+                                                              name="alamat" 
+                                                              rows="3" 
+                                                              placeholder="Masukkan alamat lengkap (Jalan, RT/RW, Kelurahan, Kecamatan, Kota)"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Medical Information Section -->
+                                        <div class="medical-info">
+                                            <h4>
+                                                <i class="fas fa-heartbeat"></i> Informasi Kesehatan
+                                            </h4>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="riwayatAlergi">
+                                                            <i class="fas fa-exclamation-triangle" style="color: #ffc107;"></i>
+                                                            Riwayat Alergi
+                                                        </label>
+                                                        <textarea class="form-control" 
+                                                                  id="riwayatAlergi" 
+                                                                  name="riwayatAlergi" 
+                                                                  rows="4" 
+                                                                  placeholder="Sebutkan alergi terhadap makanan, obat-obatan, atau bahan lainnya. Jika tidak ada alergi, tulis 'Tidak ada'"></textarea>
+                                                        <small class="text-muted">
+                                                            <i class="fas fa-info-circle"></i>
+                                                            Informasi ini penting untuk keamanan pengobatan
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="kondisiKesehatan">
+                                                            <i class="fas fa-stethoscope" style="color: #28a745;"></i>
+                                                            Kondisi Kesehatan Terkini
+                                                        </label>
+                                                        <textarea class="form-control" 
+                                                                  id="kondisiKesehatan" 
+                                                                  name="kondisiKesehatan" 
+                                                                  rows="4" 
+                                                                  placeholder="Jelaskan kondisi kesehatan saat ini, penyakit yang sedang diderita, atau obat rutin yang dikonsumsi"></textarea>
+                                                        <small class="text-muted">
+                                                            <i class="fas fa-info-circle"></i>
+                                                            Termasuk obat yang sedang dikonsumsi
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Submit Button -->
+                                        <div class="row" style="margin-top: 30px;">
+                                            <div class="col-12 text-center">
+                                                <button type="submit" class="btn btn-lg btn-save">
+                                                    <i class="fas fa-save"></i>
+                                                    Simpan Perubahan
+                                                </button>
+                                                <button type="reset" class="btn btn-lg btn-default" style="margin-left: 15px;">
+                                                    <i class="fas fa-undo"></i>
+                                                    Reset Form
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
       <!-- footer -->
      <footer class="main-footer ">
         <div class="pull-right hidden-xs">
-          <i class="fa fa-calendar"></i> 07 Agustus 2025  &nbsp; <span id="waktu">12:09:07</span>   &nbsp;<i class="fa fa-desktop"></i> Alamat Server : <input style="width:150px" readonly value="#">
+          <i class="fa fa-calendar"></i> 07 Agustus 2025  &nbsp; <span id="waktu">12:09:07</span>   &nbsp;<i class="fa fa-desktop"></i> Alamat Server : <input style="width:150px" readonly value="#">
         <div id="session" ></div>
     </div>
     <b>Manajemen Apotek 1.0</b> Copyright &copy; <a href="https://hosterweb.id/">Hosterweb Grup CV. Rizky Jaya Indosoft</a></footer>
  
 </div>
-      <!-- footer -->
-      <script>
-      function tampilkanWaktu() {
-        const waktuSekarang = new Date();
-        let jam = waktuSekarang.getHours();
-        let menit = waktuSekarang.getMinutes();
-        let detik = waktuSekarang.getSeconds();
-
-        // Tambahkan angka 0 di depan jika jam, menit, atau detik < 10
-        jam = jam < 10 ? "0" + jam : jam;
-        menit = menit < 10 ? "0" + menit : menit;
-        detik = detik < 10 ? "0" + detik : detik;
-
-        document.getElementById("waktu").innerHTML = jam + ":" + menit + ":" + detik;
-      }
-
-      // Panggil fungsi sekali saat halaman dimuat
-      tampilkanWaktu();
-
-      // Perbarui waktu setiap 1 detik (1000 milidetik)
-      setInterval(tampilkanWaktu, 1000);
-    </script>
 
      <!-- jQuery 2.1.4 -->
     <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
@@ -155,6 +432,99 @@
     <script src="../dist/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js"></script>     
+
+      <script>
+      function tampilkanWaktu() {
+        const waktuSekarang = new Date();
+        let jam = waktuSekarang.getHours();
+        let menit = waktuSekarang.getMinutes();
+        let detik = waktuSekarang.getSeconds();
+
+        // Tambahkan angka 0 di depan jika jam, menit, atau detik < 10
+        jam = jam < 10 ? "0" + jam : jam;
+        menit = menit < 10 ? "0" + menit : menit;
+        detik = detik < 10 ? "0" + detik : detik;
+
+        document.getElementById("waktu").innerHTML = jam + ":" + menit + ":" + detik;
+      }
+
+      // Panggil fungsi sekali saat halaman dimuat
+      tampilkanWaktu();
+
+      // Perbarui waktu setiap 1 detik (1000 milidetik)
+      setInterval(tampilkanWaktu, 1000);
+
+      // Wait for DOM to be ready
+      document.addEventListener('DOMContentLoaded', function() {
+          // Form submission handler
+          const profilForm = document.getElementById('profilForm');
+          if (profilForm) {
+              profilForm.addEventListener('submit', function(e) {
+                  e.preventDefault();
+                  
+                  // Show success message
+                  const successAlert = document.getElementById('successAlert');
+                  if (successAlert) {
+                      successAlert.style.display = 'block';
+                      
+                      // Scroll to top to show the alert
+                      window.scrollTo({
+                          top: 0,
+                          behavior: 'smooth'
+                      });
+                      
+                      // Hide alert after 5 seconds
+                      setTimeout(function() {
+                          successAlert.style.display = 'none';
+                      }, 5000);
+                  }
+              });
+          }
+
+          // Phone number formatting
+          const phoneInput = document.getElementById('nomorTelp');
+          if (phoneInput) {
+              phoneInput.addEventListener('input', function(e) {
+                  let value = e.target.value.replace(/\D/g, '');
+                  if (value.length >= 4) {
+                      value = value.substring(0,4) + '-' + value.substring(4);
+                  }
+                  if (value.length >= 9) {
+                      value = value.substring(0,9) + '-' + value.substring(9,13);
+                  }
+                  e.target.value = value;
+              });
+          }
+
+          // Form validation enhancement
+          const requiredInputs = document.querySelectorAll('input[required]');
+          requiredInputs.forEach(function(input) {
+              input.addEventListener('blur', function() {
+                  if (!this.value.trim()) {
+                      this.style.borderColor = '#dc3545';
+                      this.style.boxShadow = '0 0 0 0.2rem rgba(220, 53, 69, 0.25)';
+                  } else {
+                      this.style.borderColor = '#28a745';
+                      this.style.boxShadow = '0 0 0 0.2rem rgba(40, 167, 69, 0.25)';
+                  }
+              });
+
+              input.addEventListener('focus', function() {
+                  this.style.borderColor = '#007bff';
+                  this.style.boxShadow = '0 0 0 0.2rem rgba(0, 123, 255, 0.25)';
+              });
+          });
+
+          // Alert close buttons
+          const alertCloseButtons = document.querySelectorAll('.alert .close');
+          alertCloseButtons.forEach(function(button) {
+              button.addEventListener('click', function() {
+                  const alert = this.parentElement;
+                  alert.style.display = 'none';
+              });
+          });
+      });
+    </script>
 
     </div>
   </body>
