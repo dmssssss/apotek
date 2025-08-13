@@ -85,14 +85,94 @@
       </aside>
 
       <!-- Konten Dashboard -->
-       <div class="content-wrapper">        
-        <!-- Main content -->
-        <section class="content">
+       
+      <div class="content-wrapper">
+    <section class="content">
 
-        <h1>ini Laporan</h1>
+        <!-- Box Filter -->
+        <div class="box box-primary">
+            <div class="box-body">
+                <div class="row">
+                    <!-- Tanggal Awal -->
+                    <div class="col-md-2">
+                        <label>Tanggal Awal</label>
+                        <input type="date" class="form-control" value="2025-08-13">
+                    </div>
+                     <!-- Tanggal Akhir -->
+                    <div class="col-md-2  ">
+                        <label>Tanggal Akhir</label>
+                        <input type="date" class="form-control" value="2025-08-13">
+                    </div>
+                    <!-- Dropdown Jenis Laporan -->
+                    <div class="col-md-3">
+                        <label>Jenis Laporan</label>
+                        <select class="form-control">
+                            <option>Semua Pembelian</option>
+                            <option>Pembelian Obat</option>
+                            <option>Pembelian Alat Kesehatan</option>
+                        </select>
+                    </div>
+                    <!-- Pendapatan -->
+                    <div class="col-md-2">
+                        <label>Total Pembelian</label>
+                        <p class="form-control-static">0</p>
+                    </div>                   
+                    <!-- Tombol Filter -->
+                    <div class="col-md-3">
+                        <label>&nbsp;</label>
+                        <button class="btn btn-success btn-block"><i class="fa fa-search"></i> Filter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        </section><!-- /.content -->
-      </div><!-- /.content-wrapper -->
+        <!-- Box Tabel Laporan -->
+        <div class="box box-success">
+            <div class="box-header with-border">
+                <h3 class="box-title"><i class="fa fa-file-text-o"></i> Laporan Pembelian Pasien</h3>
+            </div>
+            <div class="box-body">
+                <!-- Tombol Aksi -->
+                <div class="mb-3">
+                    <button class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Pembelian</button>
+                    <button class="btn btn-warning"><i class="fa fa-refresh"></i> Refresh</button>
+                </div>
+                
+                <!-- Tabel -->
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tanggal</th>
+                            <th>Nama Pasien</th>
+                            <th>Nama Barang</th>
+                            <th>Jumlah</th>
+                            <th>Total</th>
+                            <th>Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="7" class="text-center">No data available in table</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="4">Total</th>
+                            <th>0</th>
+                            <th>Rp.0,-</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+    </section>
+</div>
+
+
+
        
       <!-- Konten Selesai -->
 
