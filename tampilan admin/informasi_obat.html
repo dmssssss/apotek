@@ -79,94 +79,109 @@
         </section>
       </aside>
 
-      <!-- Konten Dashboard -->
-       
-      <div class="content-wrapper">
+      <!-- Konten informasi_obat-->
+<div class="content-wrapper">
     <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Informasi Obat</h3>
 
-        <!-- Box Filter -->
-        <div class="box box-primary">
-            <div class="box-body">
-                <div class="row">
-                    <!-- Tanggal Awal -->
-                    <div class="col-md-2">
-                        <label>Tanggal Awal</label>
-                        <input type="date" class="form-control" value="2025-08-13">
+                        <div class="box-tools pull-left">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTambahObat">
+                                <i class="fa fa-plus"></i> Tambah Informasi Obat
+                            </button>
+                        </div>
                     </div>
-                     <!-- Tanggal Akhir -->
-                    <div class="col-md-2  ">
-                        <label>Tanggal Akhir</label>
-                        <input type="date" class="form-control" value="2025-08-13">
-                    </div>
-                    <!-- Dropdown Jenis Laporan -->
-                    <div class="col-md-3">
-                        <label>Jenis Laporan</label>
-                        <select class="form-control">
-                            <option>Semua Pembelian</option>
-                            <option>Pembelian Obat</option>
-                            <option>Pembelian Alat Kesehatan</option>
-                        </select>
-                    </div>
-                    <!-- Pendapatan -->
-                    <div class="col-md-2">
-                        <label>Total Pembelian</label>
-                        <p class="form-control-static">0</p>
-                    </div>                   
-                    <!-- Tombol Filter -->
-                    <div class="col-md-3">
-                        <label>&nbsp;</label>
-                        <button class="btn btn-success btn-block"><i class="fa fa-search"></i> Filter</button>
+
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th style="width: 5%;">No</th>
+                                    <th>Nama Obat</th>
+                                    <th>Komposisi</th>
+                                    <th>Kegunaan</th>
+                                    <th style="width: 15%;">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Paracetamol</td>
+                                    <td>Asetaminofen 500mg</td>
+                                    <td>Penurun demam</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-danger" data-toggle="tooltip" title="Hapus"><i class="fa fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Box Tabel Laporan -->
-        <div class="box box-success">
-            <div class="box-header with-border">
-                <h3 class="box-title"><i class="fa fa-file-text-o"></i> Laporan Pembelian Pasien</h3>
-            </div>
-            <div class="box-body">
-                <!-- Tombol Aksi -->
-                <div class="mb-3">
-                    <button class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Pembelian</button>
-                    <button class="btn btn-warning"><i class="fa fa-refresh"></i> Refresh</button>
-                </div>
-                
-                <!-- Tabel -->
-                <table class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Tanggal</th>
-                            <th>Nama Pasien</th>
-                            <th>Nama Barang</th>
-                            <th>Jumlah</th>
-                            <th>Total</th>
-                            <th>Keterangan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="7" class="text-center">No data available in table</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th colspan="4">Total</th>
-                            <th>0</th>
-                            <th>Rp.0,-</th>
-                            <th></th>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-        </div>
-
     </section>
 </div>
 
+<!-- MODAL TAMBAH INFORMASI OBAT -->
+<div class="modal fade" id="modalTambahObat" tabindex="-1" role="dialog" aria-labelledby="modalTambahObatLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTambahObatLabel">Tambah Informasi Obat</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/informasi-obat/store" method="POST">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Nama Obat</label>
+                        <input type="text" class="form-control" name="nama_obat" required>
+                    </div>
 
+                    <div class="form-group">
+                        <label>Komposisi</label>
+                        <textarea class="form-control" name="komposisi" rows="2" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Kegunaan Terapeutik</label>
+                        <textarea class="form-control" name="kegunaan" rows="2" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Dosis</label>
+                        <input type="text" class="form-control" name="dosis" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Aturan Pakai</label>
+                        <textarea class="form-control" name="aturan_pakai" rows="2" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Efek Samping & Penyimpanan</label>
+                        <textarea class="form-control" name="efek_penyimpanan" rows="2" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Kontraindikasi</label>
+                        <textarea class="form-control" name="kontraindikasi" rows="2" required></textarea>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
        
       <!-- Konten Selesai -->
