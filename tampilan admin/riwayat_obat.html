@@ -82,303 +82,119 @@
       </aside>
 
       <!-- Konten Dashboard -->
-      <div class="content-wrapper">
-  <section class="content-header">
-    <h1>Manajemen Data Obat</h1>
-    <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-medkit"></i> Farmasi</a></li>
-      <li class="active">Data Obat</li>
-    </ol>
-  </section>
-
-  <section class="content">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="box box-primary">
-          <div class="box-header with-border">
-            <h3 class="box-title">Daftar Obat</h3>
-            <div class="box-tools pull-right">
-              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalTambahObat">
-                <i class="fa fa-plus"></i> Tambah Obat
-              </button>
-              <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modalPembelianBaru">
-                <i class="fa fa-cart-plus"></i> Pembelian Baru
-              </button>
-            </div>
-          </div>
-          <div class="box-body">
-            <table id="tblObat" class="table table-bordered table-striped">
-              <thead>
-                <tr>
-                  <th>Kode Obat</th>
-                  <th>Nama Obat</th>
-                  <th>Satuan</th>
-                  <th>Kategori</th>
-                  <th>Harga Beli</th>
-                  <th>Harga Jual</th>
-                  <th>Stok</th>
-                  <th>Expired Date</th>
-                  <th>Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>OBT-001</td>
-                  <td>Paracetamol 500mg</td>
-                  <td>Tablet</td>
-                  <td>Analgesik</td>
-                  <td>Rp 2.500</td>
-                  <td>Rp 3.500</td>
-                  <td>150</td>
-                  <td>2024-12-31</td>
-                  <td>
-                    <button class="btn btn-xs btn-warning"><i class="fa fa-edit"></i></button>
-                    <button class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>OBT-002</td>
-                  <td>Amoxicillin 500mg</td>
-                  <td>Kapsul</td>
-                  <td>Antibiotik</td>
-                  <td>Rp 5.000</td>
-                  <td>Rp 7.500</td>
-                  <td>75</td>
-                  <td>2024-06-30</td>
-                  <td>
-                    <button class="btn btn-xs btn-warning"><i class="fa fa-edit"></i></button>
-                    <button class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- Modal Tambah Obat -->
-<div class="modal fade" id="modalTambahObat" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title">Tambah Data Obat Baru</h4>
-      </div>
-      <div class="modal-body">
-        <form id="formTambahObat">
-          <div class="form-group">
-            <label>Kode Obat</label>
-            <input type="text" class="form-control" placeholder="Masukkan kode obat" required>
-          </div>
-          <div class="form-group">
-            <label>Nama Obat</label>
-            <input type="text" class="form-control" placeholder="Masukkan nama obat" required>
-          </div>
-          <div class="form-group">
-            <label>Satuan</label>
-            <select class="form-control" required>
-              <option value="">Pilih Satuan</option>
-              <option>Tablet</option>
-              <option>Kapsul</option>
-              <option>Botol</option>
-              <option>Tube</option>
-              <option>Sachet</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Kategori</label>
-            <input type="text" class="form-control" placeholder="Masukkan kategori" required>
-          </div>
-          <div class="form-group">
-            <label>Harga Beli</label>
-            <input type="number" class="form-control" placeholder="Masukkan harga beli" min="0" required>
-          </div>
-          <div class="form-group">
-            <label>Harga Jual</label>
-            <input type="number" class="form-control" placeholder="Masukkan harga jual" min="0" required>
-          </div>
-          <div class="form-group">
-            <label>Stok Awal</label>
-            <input type="number" class="form-control" placeholder="Masukkan jumlah stok awal" min="0" required>
-          </div>
-          <div class="form-group">
-            <label>Tanggal Expired</label>
-            <input type="date" class="form-control" required>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
-        <button type="button" class="btn btn-primary">Simpan Obat</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Pembelian Baru -->
-<div class="modal fade" id="modalPembelianBaru" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title">Form Pembelian Obat Baru</h4>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label>Nomor Pembelian</label>
-              <input type="text" class="form-control" value="PBL-2023-001" readonly>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label>Tanggal Pembelian</label>
-              <input type="date" class="form-control" value="<?php echo date('Y-m-d'); ?>">
-            </div>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-md-12">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th width="30%">Nama Obat</th>
-                  <th width="10%">Satuan</th>
-                  <th width="15%">Harga Satuan</th>
-                  <th width="10%">Qty</th>
-                  <th width="15%">Subtotal</th>
-                  <th width="10%">Expired</th>
-                  <th width="10%">Aksi</th>
-                </tr>
-              </thead>
-              <tbody id="tblItemPembelian">
-                <tr>
-                  <td>
-                    <select class="form-control select2" style="width:100%">
-                      <option>- Pilih Obat -</option>
-                      <option>Paracetamol 500mg</option>
-                      <option>Amoxicillin 500mg</option>
-                    </select>
-                  </td>
-                  <td>Tablet</td>
-                  <td><input type="number" class="form-control" value="2500"></td>
-                  <td><input type="number" class="form-control" value="1" min="1"></td>
-                  <td>Rp 2.500</td>
-                  <td><input type="date" class="form-control" value="2024-12-31"></td>
-                  <td><button class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></button></td>
-                </tr>
-                <tr id="rowBaruPembelian">
-                  <td colspan="7" class="text-center">
-                    <button class="btn btn-xs btn-success" id="btnTambahItem">
-                      <i class="fa fa-plus"></i> Tambah Item
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="4" class="text-right"><strong>Total</strong></td>
-                  <td colspan="3"><strong>Rp 2.500</strong></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
-        <button type="button" class="btn btn-primary">Simpan Pembelian</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<style>
-  .select2-container--default .select2-selection--single {
-    height: 34px;
-    border-radius: 0;
-  }
-  .select2-container--default .select2-selection--single .select2-selection__rendered {
-    line-height: 34px;
-  }
-</style>
-
-<script>
-  $(document).ready(function() {
-    // Inisialisasi DataTable
-    $('#tblObat').DataTable({
-      "language": {
-        "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Indonesian.json"
-      },
-      "responsive": true
-    });
-
-    // Tambah item pembelian
-    $('#btnTambahItem').click(function() {
-      const newRow = `
-        <tr>
-          <td>
-            <select class="form-control select2" style="width:100%">
-              <option>- Pilih Obat -</option>
-              <option>Paracetamol 500mg</option>
-              <option>Amoxicillin 500mg</option>
-            </select>
-          </td>
-          <td>Tablet</td>
-          <td><input type="number" class="form-control" value="2500"></td>
-          <td><input type="number" class="form-control" value="1" min="1"></td>
-          <td>Rp 2.500</td>
-          <td><input type="date" class="form-control" value="2024-12-31"></td>
-          <td><button class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></button></td>
-        </tr>`;
-      
-      $(newRow).insertBefore('#rowBaruPembelian');
-      
-      // Inisialisasi select2 untuk row baru
-      $('.select2').select2();
-      
-      // Hitung ulang total
-      hitungTotalPembelian();
-    });
-
-    // Hitung total pembelian
-    function hitungTotalPembelian() {
-      let total = 0;
-      
-      $('#tblItemPembelian tr:not(#rowBaruPembelian)').each(function() {
-        const harga = parseInt($(this).find('td:eq(2) input').val()) || 0;
-        const qty = parseInt($(this).find('td:eq(3) input').val()) || 0;
-        const subtotal = harga * qty;
-        
-        $(this).find('td:eq(4)').text(`Rp ${subtotal.toLocaleString()}`);
-        total += subtotal;
-      });
-      
-      $('#tblItemPembelian tr:last').prev().find('td:eq(4)').text(`Rp ${total.toLocaleString()}`);
-    }
-
-    // Event listener untuk perubahan harga/qty
-    $(document).on('input', '#tblItemPembelian input[type="number"]', hitungTotalPembelian);
-    
-    // Hapus item pembelian
-    $(document).on('click', '#tblItemPembelian .btn-danger', function() {
-      $(this).closest('tr').remove();
-      hitungTotalPembelian();
-    });
-    
-    // Inisialisasi select2
-    $('.select2').select2();
-  });
-</script>
-
        
+      <div class="content-wrapper">
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Riwayat Obat</h3>
+                        
+                        <div class="box-tools pull-left">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTambahRiwayat">
+                                <i class="fa fa-plus"></i> Tambah Riwayat Obat
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th style="width: 5%;">No</th>
+                                    <th>Tanggal Pembelian</th>
+                                    <th>Nama Obat</th>
+                                    <th style="width: 15%;">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+    <tr>
+        <td>1</td>
+        <td>2023-10-01</td>
+        <td>Paracetamol</td>
+        <td>
+            <button class="btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><i class="fa fa-edit"></i></button>
+            <button class="btn btn-sm btn-danger" data-toggle="tooltip" title="Hapus"><i class="fa fa-trash"></i></button>
+        </td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>2023-10-05</td>
+        <td>Amoxicillin</td>
+        <td>
+            <button class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></button>
+            <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+        </td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>2023-11-10</td>
+        <td>Vitamin C 1000mg</td>
+        <td>
+            <button class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></button>
+            <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+        </td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>2024-01-20</td>
+        <td>Obat Batuk Sirup</td>
+        <td>
+            <button class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></button>
+            <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+        </td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>2024-03-15</td>
+        <td>Betadine</td>
+        <td>
+            <button class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></button>
+            <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+        </td>
+    </tr>
+    </tbody>
+                            </table>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</div>
+<div class="modal fade" id="modalTambahRiwayat" tabindex="-1" role="dialog" aria-labelledby="modalTambahRiwayatLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTambahRiwayatLabel">Tambah Riwayat Obat</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/riwayat-obat/store" method="POST">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="tanggalPembelian">Tanggal Pembelian</label>
+                        <input type="date" class="form-control" id="tanggalPembelian" name="tanggal_pembelian" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="namaObat">Nama Obat</label>
+                        <input type="text" class="form-control" id="namaObat" name="nama_obat" placeholder="Masukkan nama obat" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Main content -->
+
+  
+
       <!-- Konten Selesai -->
 
       <!-- footer -->
