@@ -1,0 +1,18 @@
+<script>
+  (function() {
+    const isLoggedIn = localStorage.getItem('logged_in') === 'true';
+    const role = localStorage.getItem('role');
+
+    // Kalau belum login → tendang ke login
+    if (!isLoggedIn) {
+      window.location.href = '../login.html'; // SESUAIKAN jika login.html beda lokasi
+      return;
+    }
+
+    // Kalau login tapi bukan admin → tendang juga
+    if (role !== 'admin') {
+      window.location.href = '../login.html';
+      return;
+    }
+  })();
+</script>

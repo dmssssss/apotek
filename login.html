@@ -505,6 +505,11 @@
         }
 
             function handleLoginSuccess(role) {
+
+            localStorage.setItem('logged_in', 'true');
+            localStorage.setItem('role', role); // 'admin' atau 'pasien'
+
+
         showSuccess('Login berhasil! Mengalihkan ke dashboard...');
         
         elements.loginBtn.innerHTML = '<i class="fas fa-check"></i> Berhasil!';
@@ -516,7 +521,7 @@
             } else if (role === 'pasien') {
                 window.location.href = 'tampilan pasien/beranda_pasien.html';
             }
-        }, 1500);
+        }, 500);
     }
 
 
