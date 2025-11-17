@@ -179,197 +179,132 @@
       </aside>
 
       <!-- Content Wrapper -->
+      
       <div class="content-wrapper">
-            <!-- Content Header -->
-            
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Profil Pengguna</h3>
 
-            <!-- Main content -->
-            <section class="content">
-                <div class="container-fluid">
-                    <!-- Info Alert -->
-                    <div class="alert alert-info alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <h4><i class="icon fas fa-info-circle"></i> Informasi Penting</h4>
-                        Pastikan semua data yang Anda masukkan akurat dan terkini. Informasi ini akan digunakan untuk memberikan pelayanan kesehatan yang optimal.
-                    </div>
-
-                    <!-- Success Alert (Hidden by default) -->
-                    <div class="alert alert-success alert-dismissible" id="successAlert" style="display: none;">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <h4><i class="icon fas fa-check-circle"></i> Berhasil!</h4>
-                        Data profil berhasil disimpan dan akan segera diperbarui.
-                    </div>
-
-                    <!-- Profile Card -->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card profile-card">
-                                <!-- Profile Header -->
-                                <div class="profile-header">
-                                    <div class="profile-avatar">
-                                        <i class="fas fa-user"></i>
-                                    </div>
-                                    <h3 style="margin: 0; font-weight: 300;">Data Profil Pasien</h3>
-                                    <p style="margin: 5px 0 0 0; opacity: 0.9;">Lengkapi informasi pribadi Anda</p>
-                                </div>
-                                
-                                <!-- Form Body -->
-                                <div class="card-body" style="padding: 30px;">
-                                    <form id="profilForm">
-                                        <!-- Basic Information Section -->
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <h4 style="color: #3C8DBC; margin-bottom: 20px; border-bottom: 2px solid #e9ecef; padding-bottom: 10px;">
-                                                    <i class="fas fa-id-card"></i> Informasi Dasar
-                                                </h4>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="noMember">
-                                                        <i class="fas fa-id-badge icon-label"></i>
-                                                        Nomor Member <span class="required">*</span>
-                                                    </label>
-                                                    <input type="text" 
-                                                           class="form-control" 
-                                                           id="noMember" 
-                                                           name="noMember" 
-                                                           placeholder="Contoh: APT001234" 
-                                                           required>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="nama">
-                                                        <i class="fas fa-user icon-label"></i>
-                                                        Nama Lengkap <span class="required">*</span>
-                                                    </label>
-                                                    <input type="text" 
-                                                           class="form-control" 
-                                                           id="nama" 
-                                                           name="nama" 
-                                                           placeholder="Masukkan nama lengkap sesuai KTP" 
-                                                           required>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Contact Information -->
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="nomorTelp">
-                                                        <i class="fas fa-phone icon-label"></i>
-                                                        Nomor Telepon <span class="required">*</span>
-                                                    </label>
-                                                    <input type="tel" 
-                                                           class="form-control" 
-                                                           id="nomorTelp" 
-                                                           name="nomorTelp" 
-                                                           placeholder="08XX-XXXX-XXXX" 
-                                                           pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}"
-                                                           required>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="email">
-                                                        <i class="fas fa-envelope icon-label"></i>
-                                                        Alamat Email
-                                                    </label>
-                                                    <input type="email" 
-                                                           class="form-control" 
-                                                           id="email" 
-                                                           name="email" 
-                                                           placeholder="nama@email.com">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label for="alamat">
-                                                        <i class="fas fa-map-marker-alt icon-label"></i>
-                                                        Alamat Lengkap
-                                                    </label>
-                                                    <textarea class="form-control" 
-                                                              id="alamat" 
-                                                              name="alamat" 
-                                                              rows="3" 
-                                                              placeholder="Masukkan alamat lengkap (Jalan, RT/RW, Kelurahan, Kecamatan, Kota)"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Medical Information Section -->
-                                        <div class="medical-info">
-                                            <h4>
-                                                <i class="fas fa-heartbeat"></i> Informasi Kesehatan
-                                            </h4>
-                                            
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label for="riwayatAlergi">
-                                                            <i class="fas fa-exclamation-triangle" style="color: #ffc107;"></i>
-                                                            Riwayat Alergi
-                                                        </label>
-                                                        <textarea class="form-control" 
-                                                                  id="riwayatAlergi" 
-                                                                  name="riwayatAlergi" 
-                                                                  rows="4" 
-                                                                  placeholder="Sebutkan alergi terhadap makanan, obat-obatan, atau bahan lainnya. Jika tidak ada alergi, tulis 'Tidak ada'"></textarea>
-                                                        <small class="text-muted">
-                                                            <i class="fas fa-info-circle"></i>
-                                                            Informasi ini penting untuk keamanan pengobatan
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label for="kondisiKesehatan">
-                                                            <i class="fas fa-stethoscope" style="color: #28a745;"></i>
-                                                            Kondisi Kesehatan Terkini
-                                                        </label>
-                                                        <textarea class="form-control" 
-                                                                  id="kondisiKesehatan" 
-                                                                  name="kondisiKesehatan" 
-                                                                  rows="4" 
-                                                                  placeholder="Jelaskan kondisi kesehatan saat ini, penyakit yang sedang diderita, atau obat rutin yang dikonsumsi"></textarea>
-                                                        <small class="text-muted">
-                                                            <i class="fas fa-info-circle"></i>
-                                                            Termasuk obat yang sedang dikonsumsi
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Submit Button -->
-                                        <div class="row" style="margin-top: 30px;">
-                                            <div class="col-12 text-center">
-                                                <button type="submit" class="btn btn-lg btn-save">
-                                                    <i class="fas fa-save"></i>
-                                                    Simpan Perubahan
-                                                </button>
-                                                <button type="reset" class="btn btn-lg btn-default" style="margin-left: 15px;">
-                                                    <i class="fas fa-undo"></i>
-                                                    Reset Form
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+                        <div class="box-tools pull-left">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTambahProfile">
+                                <i class="fa fa-plus"></i> Tambah Profil
+                            </button>
                         </div>
                     </div>
-                </div>
-            </section>
-        </div>
 
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th style="width: 5%;">No</th>
+                                    <th>Nama</th>
+                                    <th>Identifikasi</th>
+                                    <th>Umur</th>
+                                    <th style="width: 15%;">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Farrel</td>
+                                    <td>351xxxxxxxx</td>
+                                    <td>18</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-danger" data-toggle="tooltip" title="Hapus"><i class="fa fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- MODAL TAMBAH PROFILE -->
+<div class="modal fade" id="modalTambahProfile" tabindex="-1" role="dialog" aria-labelledby="modalTambahProfileLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTambahProfileLabel">Tambah Profil Pengguna</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/profile/store" method="POST">
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label>Nama</label>
+                        <input type="text" class="form-control" name="nama" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Identifikasi</label>
+                        <input type="text" class="form-control" name="identifikasi" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Umur</label>
+                        <input type="number" class="form-control" name="umur" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Berat Badan (kg)</label>
+                        <input type="number" class="form-control" name="berat_badan" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tinggi Badan (cm)</label>
+                        <input type="number" class="form-control" name="tinggi_badan" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Jenis Kelamin</label>
+                        <select class="form-control" name="jenis_kelamin" required>
+                            <option value="">-- Pilih --</option>
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Alergi</label>
+                        <textarea class="form-control" name="alergi" rows="2"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Kehamilan</label>
+                        <select class="form-control" name="kehamilan">
+                            <option value="">-- Pilih --</option>
+                            <option value="Tidak">Tidak</option>
+                            <option value="Ya">Ya</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Menyusui</label>
+                        <select class="form-control" name="menyusui">
+                            <option value="">-- Pilih --</option>
+                            <option value="Tidak">Tidak</option>
+                            <option value="Ya">Ya</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
       <!-- footer -->
      <footer class="main-footer ">
         <div class="pull-right hidden-xs">
