@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Login sistem pencatatan obat apotek untuk pasien">
     <meta name="robots" content="noindex, nofollow">
-    <title>Login Pasien - Apotek Indonesia</title>
+    <title>Login  - Apotek Indonesia</title>
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -379,7 +379,7 @@
                 <img src="img/apotek.jpg" alt="Logo Apotek Indonesia" loading="lazy">
             </div>
             <h1 class="system-title">Apotek Indonesia</h1>
-            <p class="system-subtitle">Login Sebagai Pasien</p>
+            <p class="system-subtitle"><b>Login</b></p>
         </div>
 
         <div class="error-message" id="errorMessage" role="alert">
@@ -426,12 +426,11 @@
             <p class="help-text">Butuh bantuan untuk mengakses akun Anda?</p>
             <div class="help-buttons">
                 <a href="tel:+62xxx" class="help-btn" aria-label="Hubungi apotek via telepon">📞 Hubungi Apotek</a>
-                <a href="#help" class="help-btn" aria-label="Bantuan login">❓ Bantuan Login</a>
             </div>
         </div>
 
         <div class="footer">
-            <p>&copy; 2024 HosterWeb. All rights reserved.</p>
+            <p>&copy; 2025 HosterWeb.</p>
         </div>
     </div>
 
@@ -486,11 +485,16 @@
             setTimeout(() => {
                 // Perubahan utama ada di sini
                 // Cek kredensial yang diminta: username 'pasien' dan password '08123'
-                if (username === 'pasien' && password === '08123') {
-                    handleLoginSuccess();
-                } else {
+                if (username.toLowerCase() === 'admin' && password === 'admin') {
+                    handleLoginSuccess('admin');
+                } 
+                else if (username.toLowerCase() === 'pasien' && password === '08123') {
+                    handleLoginSuccess('pasien');
+                } 
+                else {
                     handleLoginError('Username atau password salah. Silakan coba lagi.');
                 }
+
             }, Math.random() * 1000 + 800); // 800-1800ms realistic delay
         });
 
@@ -500,19 +504,21 @@
                 '<i class="fas fa-spinner fa-spin"></i> Memproses...' : 'Masuk';
         }
 
-        function handleLoginSuccess() {
-            // Show success message
-            showSuccess('Login berhasil! Mengalihkan ke dashboard...');
-            
-            // Update button appearance
-            elements.loginBtn.innerHTML = '<i class="fas fa-check"></i> Berhasil!';
-            elements.loginBtn.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
-            
-            // Redirect after delay
-            setTimeout(() => {
+            function handleLoginSuccess(role) {
+        showSuccess('Login berhasil! Mengalihkan ke dashboard...');
+        
+        elements.loginBtn.innerHTML = '<i class="fas fa-check"></i> Berhasil!';
+        elements.loginBtn.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
+
+        setTimeout(() => {
+            if (role === 'admin') {
+                window.location.href = 'tampilan admin/dashboard_admin.html';
+            } else if (role === 'pasien') {
                 window.location.href = 'tampilan pasien/beranda_pasien.html';
-            }, 1500);
-        }
+            }
+        }, 1500);
+    }
+
 
         function handleLoginError(message) {
             showError(message);
