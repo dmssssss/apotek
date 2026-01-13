@@ -40,11 +40,11 @@
              <ul class="nav navbar-nav">
               <li >
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="fa fa-user"></i> User : Admin</a>
+                  <i class="fa fa-user"></i> User : Pasien</a>
                 </a>
               </li>
               <li>
-                <a href="../login_admin.html" > <i class="fa fa-sign-out"></i>Keluar</a>
+                <a href="../login.html" > <i class="fa fa-sign-out"></i>Keluar</a>
             </li>
         </ul>
       </div>
@@ -56,135 +56,136 @@
         <section class="sidebar">
           <ul class="sidebar-menu">           
             <li>
-              <a href="dashboard_admin.html">
-                <i class="fa fa-house"></i> <span> Dashboard</span>
+              <a href="beranda_pasien.html ">
+                <i class="fa fa-house"></i> <span> Beranda</span>
               </a>
             </li>
             <li>
-              <a href="data_pasien.html">
-                <i class="fa fa-hospital-user"></i> <span> Data Pasien</span>
+              <a href="riwayat_obat2.html">
+                <i class="fa-solid fa-notes-medical"></i><span> Riwayat Obat</span>
               </a>
             </li>
             <li>
-              <a href="data_obat.html">
-                <i class="fa fa-pills"></i> <span> Data Obat</span>
+              <a href="profil_pasien.html">
+                <i class="fa fa-user"></i> <span> Profile </span>
               </a>
             </li>
-            <li>
-              <a href="layanan_khusus.html">
-                <i class="fa fa-hands-helping"></i> <span> Layanan Khusus </span>
-              </a>
-            </li>
-            <li>
-              <a href="laporan.html">
-                <i class="fa fa-file-alt "></i> <span> Laporan</span>
-              </a>
-            </li>                     
+                            
           </ul>
         </section>
       </aside>
 
-      <!-- Konten Dashboard -->
-       
-      <div class="content-wrapper">
+      <!-- konten mulai -->
+
+       <div class="content-wrapper">
     <section class="content">
-
-        <!-- Box Filter -->
-        <div class="box box-primary">
-            <div class="box-body">
-                <div class="row">
-                    <!-- Tanggal Awal -->
-                    <div class="col-md-2">
-                        <label>Tanggal Awal</label>
-                        <input type="date" class="form-control" value="2025-08-13">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Riwayat Obat</h3>
+                        
+                        <div class="box-tools pull-left">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTambahRiwayat">
+                                <i class="fa fa-plus"></i> Tambah Riwayat Obat
+                            </button>
+                        </div>
                     </div>
-                     <!-- Tanggal Akhir -->
-                    <div class="col-md-2  ">
-                        <label>Tanggal Akhir</label>
-                        <input type="date" class="form-control" value="2025-08-13">
+                    
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th style="width: 5%;">No</th>
+                                    <th>Tanggal Pembelian</th>
+                                    <th>Nama Obat</th>
+                                    <th style="width: 15%;">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+    <tr>
+        <td>1</td>
+        <td>2023-10-01</td>
+        <td>Paracetamol</td>
+        <td>
+            <button class="btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><i class="fa fa-edit"></i></button>
+            <button class="btn btn-sm btn-danger" data-toggle="tooltip" title="Hapus"><i class="fa fa-trash"></i></button>
+        </td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>2023-10-05</td>
+        <td>Amoxicillin</td>
+        <td>
+            <button class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></button>
+            <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+        </td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>2023-11-10</td>
+        <td>Vitamin C 1000mg</td>
+        <td>
+            <button class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></button>
+            <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+        </td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>2024-01-20</td>
+        <td>Obat Batuk Sirup</td>
+        <td>
+            <button class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></button>
+            <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+        </td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>2024-03-15</td>
+        <td>Betadine</td>
+        <td>
+            <button class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></button>
+            <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+        </td>
+    </tr>
+    </tbody>
+                            </table>
                     </div>
-                    <!-- Dropdown Jenis Laporan -->
-                    <div class="col-md-3">
-                        <label>Jenis Laporan</label>
-                        <select class="form-control">
-                            <option>Semua Pembelian</option>
-                            <option>Pembelian Obat</option>
-                            <option>Pembelian Alat Kesehatan</option>
-                        </select>
-                    </div>
-                    <!-- Pendapatan -->
-                    <div class="col-md-2">
-                        <label>Total Pembelian</label>
-                        <p class="form-control-static">0</p>
-                    </div>                   
-                    <!-- Tombol Filter -->
-                    <div class="col-md-3">
-                        <label>&nbsp;</label>
-                        <button class="btn btn-success btn-block"><i class="fa fa-search"></i> Filter</button>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Box Tabel Laporan -->
-        <div class="box box-success">
-            <div class="box-header with-border">
-                <h3 class="box-title"><i class="fa fa-file-text-o"></i> Laporan Pembelian Pasien</h3>
-            </div>
-            <div class="box-body">
-                <!-- Tombol Aksi -->
-                <div class="mb-3">
-                    <button class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Pembelian</button>
-                    <button class="btn btn-warning"><i class="fa fa-refresh"></i> Refresh</button>
-                </div>
-                
-                <!-- Tabel -->
-                <table class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Tanggal</th>
-                            <th>Nama Pasien</th>
-                            <th>Nama Barang</th>
-                            <th>Jumlah</th>
-                            <th>Total</th>
-                            <th>Keterangan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="7" class="text-center">No data available in table</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th colspan="4">Total</th>
-                            <th>0</th>
-                            <th>Rp.0,-</th>
-                            <th></th>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-        </div>
-
-    </section>
+        </section>
 </div>
-
-
-
-       
-      <!-- Konten Selesai -->
-
-      <!-- footer -->
-     <footer class="main-footer ">
-        <div class="pull-right hidden-xs">
-          <i class="fa fa-calendar"></i> 07 Agustus 2025  &nbsp; <span id="waktu">12:09:07</span>   &nbsp;<i class="fa fa-desktop"></i> Alamat Server : <input style="width:150px" readonly value="#">
-        <div id="session" ></div>
+<div class="modal fade" id="modalTambahRiwayat" tabindex="-1" role="dialog" aria-labelledby="modalTambahRiwayatLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTambahRiwayatLabel">Tambah Riwayat Obat</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/riwayat-obat/store" method="POST">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="tanggalPembelian">Tanggal Pembelian</label>
+                        <input type="date" class="form-control" id="tanggalPembelian" name="tanggal_pembelian" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="namaObat">Nama Obat</label>
+                        <input type="text" class="form-control" id="namaObat" name="nama_obat" placeholder="Masukkan nama obat" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <b>Manajemen Apotek 1.0</b> Copyright &copy; <a href="https://hosterweb.id/">Hosterweb Grup CV. Rizky Jaya Indosoft</a></footer>
- 
 </div>
+
+      <!-- konten selesai -->
       <!-- footer -->
       <script>
       function tampilkanWaktu() {

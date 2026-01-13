@@ -44,7 +44,7 @@
                 </a>
               </li>
               <li>
-                <a href="../login_admin.html" > <i class="fa fa-sign-out"></i>Keluar</a>
+                <a href="../login.html" > <i class="fa fa-sign-out"></i>Keluar</a>
             </li>
         </ul>
       </div>
@@ -53,7 +53,7 @@
       </header>
 
       <aside class="main-sidebar">
-        <section class="sidebar">
+       <section class="sidebar">
           <ul class="sidebar-menu">           
             <li>
               <a href="dashboard_admin.html">
@@ -61,23 +61,18 @@
               </a>
             </li>
             <li>
-              <a href="data_pasien.html">
-                <i class="fa fa-hospital-user"></i> <span> Data Pasien</span>
+              <a href="riwayat_obat.html">
+                <i class="fa fa-hospital-user"></i> <span>Riwayat Obat</span>
               </a>
             </li>
             <li>
-              <a href="data_obat.html">
-                <i class="fa fa-pills"></i> <span> Data Obat</span>
+              <a href="informasi_obat.html">
+                <i class="fa fa-pills"></i> <span>Informasi Obat</span>
               </a>
             </li>
             <li>
-              <a href="layanan_khusus.html">
-                <i class="fa fa-hands-helping"></i> <span> Layanan Khusus </span>
-              </a>
-            </li>
-            <li>
-              <a href="laporan.html">
-                <i class="fa fa-file-alt "></i> <span> Laporan</span>
+              <a href="profile.html">
+                <i class="fa fa-hands-helping"></i> <span>Profile</span>
               </a>
             </li>                     
           </ul>
@@ -85,226 +80,130 @@
       </aside>
 
       <!-- Konten Dashboard -->
-<div class="content-wrapper">        
-  <!-- Content Header (Page header) -->
-  <section class="content-header">
-    <h1>
-      <i class="fa fa-user-md"></i> Layanan Konsultasi Medis
-    </h1>    
-  </section>
+<div class="content-wrapper">
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Profil Pengguna</h3>
 
-  <!-- Main content -->
-<section class="content">  
+                        <div class="box-tools pull-left">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTambahProfile">
+                                <i class="fa fa-plus"></i> Tambah Profil
+                            </button>
+                        </div>
+                    </div>
 
-  <!-- Info boxes -->
-  <div class="row">
-    <div class="col-md-3 col-sm-6 col-xs-12">
-      <div class="info-box">
-        <span class="info-box-icon bg-aqua"><i class="fa fa-clipboard"></i></span>
-        <div class="info-box-content">
-          <span class="info-box-text">Total Rekomendasi</span>
-          <span class="info-box-number" id="totalRekomendasi">156</span>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-md-3 col-sm-6 col-xs-12">
-      <div class="info-box">
-        <span class="info-box-icon bg-green"><i class="fa fa-calendar-check-o"></i></span>
-        <div class="info-box-content">
-          <span class="info-box-text">Hari Ini</span>
-          <span class="info-box-number" id="rekomendasisHariIni">28</span>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-md-3 col-sm-6 col-xs-12">
-      <div class="info-box">
-        <span class="info-box-icon bg-yellow"><i class="fa fa-clock-o"></i></span>
-        <div class="info-box-content">
-          <span class="info-box-text">Pending Follow-up</span>
-          <span class="info-box-number" id="pendingFollowup">12</span>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-md-3 col-sm-6 col-xs-12">
-      <div class="info-box">
-        <span class="info-box-icon bg-red"><i class="fa fa-exclamation-triangle"></i></span>
-        <div class="info-box-content">
-          <span class="info-box-text">Kasus Mendesak</span>
-          <span class="info-box-number" id="urgentCases">3</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <!-- Service Overview -->
-    <div class="col-md-4">
-      <div class="box box-primary">
-        <div class="box-header with-border text-center">
-          <h3 class="box-title"><i class="fa fa-user-md"></i> Layanan Konsultasi Khusus</h3>
-        </div>
-        <div class="box-body text-center">
-          <div style="padding: 20px 0;">
-            <i class="fa fa-stethoscope" style="font-size: 64px; color: #3c8dbc; margin-bottom: 20px;"></i>
-            <p style="font-size: 16px; line-height: 1.6;">
-              Sistem konsultasi medis terintegrasi dengan<br>                
-            </p>
-          </div>
-          <button class="btn btn-primary btn-lg btn-block" onclick="startFlow()" style="margin-bottom: 10px;">
-            <i class="fa fa-play-circle"></i> Mulai Layanan Baru
-          </button>
-          <button class="btn btn-default btn-block" onclick="showHistory()">
-            <i class="fa fa-history"></i> Lihat Riwayat
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main Flow Process -->
-    <div class="col-md-8">
-      <div class="box box-solid">
-        <div class="box-header with-border">
-          <h3 class="box-title"><i class="fa fa-sitemap"></i> Alur Layanan Khusus</h3>
-          <div class="box-tools pull-right">
-            <span class="btn label-info" id="currentStep">Siap Memulai</span>
-          </div>
-        </div>
-        <div class="box-body">
-          
-          <!-- Progress Bar -->
-          <div class="progress progress-sm" style="margin-bottom: 20px;">
-            <div class="progress-bar progress-bar-primary progress-bar-striped active" id="progressBar" style="width: 0%"></div>
-          </div>
-          
-          <!-- Initial State -->
-          <div id="initialState">
-            <div class="callout callout-info">
-              <h4><i class="fa fa-info-circle"></i> Selamat Datang di Layanan Konsultasi Khusus</h4>
-              <div class="row">
-                <div class="col-md-8">
-                  <p><strong>Layanan khusus memungkinkan Anda untuk:</strong></p>
-                  <ul>
-                    <li>Membuat rekomendasi personal berdasarkan kondisi pasien</li>
-                    <li>Menggunakan template yang telah tersedia</li>
-                    <li>Mengirim rekomendasi melalui berbagai metode</li>
-                    <li>Menjadwalkan follow-up otomatis</li>
-                    <li>Tracking dan monitoring hasil</li>
-                  </ul>
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th style="width: 5%;">No</th>
+                                    <th>Nama</th>
+                                    <th>Identifikasi</th>
+                                    <th>Umur</th>
+                                    <th style="width: 15%;">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Farrel</td>
+                                    <td>351xxxxxxxx</td>
+                                    <td>18</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-danger" data-toggle="tooltip" title="Hapus"><i class="fa fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="col-md-4 text-center">
-                  <i class="fa fa-rocket" style="font-size: 60px; color: #17a2b8; opacity: 0.7;"></i>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- MODAL TAMBAH PROFILE -->
+<div class="modal fade" id="modalTambahProfile" tabindex="-1" role="dialog" aria-labelledby="modalTambahProfileLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTambahProfileLabel">Tambah Profil Pengguna</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/profile/store" method="POST">
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label>Nama</label>
+                        <input type="text" class="form-control" name="nama" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Identifikasi</label>
+                        <input type="text" class="form-control" name="identifikasi" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Umur</label>
+                        <input type="number" class="form-control" name="umur" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Berat Badan (kg)</label>
+                        <input type="number" class="form-control" name="berat_badan" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tinggi Badan (cm)</label>
+                        <input type="number" class="form-control" name="tinggi_badan" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Jenis Kelamin</label>
+                        <select class="form-control" name="jenis_kelamin" required>
+                            <option value="">-- Pilih --</option>
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Alergi</label>
+                        <textarea class="form-control" name="alergi" rows="2"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Kehamilan</label>
+                        <select class="form-control" name="kehamilan">
+                            <option value="">-- Pilih --</option>
+                            <option value="Tidak">Tidak</option>
+                            <option value="Ya">Ya</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Menyusui</label>
+                        <select class="form-control" name="menyusui">
+                            <option value="">-- Pilih --</option>
+                            <option value="Tidak">Tidak</option>
+                            <option value="Ya">Ya</option>
+                        </select>
+                    </div>
+
                 </div>
-              </div>
-              <p class="text-center"><strong>Klik "Mulai Layanan Baru" untuk memulai proses</strong></p>
-            </div>
-          </div>
-
-          <!-- End Timeline -->
-          <div class="timeline" id="timelineEnd" style="display: none;">
-            <div class="time-label">
-              <span class="bg-gray"><i class="fa fa-clock-o"></i> Selesai</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Success Modal -->
-  <div class="modal modal-success fade" id="successModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title"><i class="fa fa-check-circle"></i> Berhasil!</h4>
-        </div>
-        <div class="modal-body">
-          <div class="text-center">
-            <i class="fa fa-check-circle"></i>
-            <h3>Rekomendasi Berhasil Dikirim!</h3>
-            <p id="successMessage">Rekomendasi telah dikirim ke pasien dan tersimpan dalam sistem.</p>
-            <div class="alert alert-info">
-              <strong>Reference ID:</strong> <span id="referenceId">REC-2024-001</span>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-success" onclick="printReceipt()">
-            <i class="fa fa-print"></i> Cetak Bukti
-          </button>
-          <button type="button" class="btn btn-primary" onclick="startNewService()">
-            <i class="fa fa-plus"></i> Layanan Baru
-          </button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">
-            <i class="fa fa-close"></i> Tutup
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Template Modal -->
-  <div class="modal fade" id="templateModal">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title"><i class="fa fa-book"></i> Template Rekomendasi</h4>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="list-group" id="templateList">
-                <a href="#" class="list-group-item active" onclick="selectTemplate('diabetes')">
-                  <i class="fa fa-heartbeat"></i> Diabetes Mellitus
-                </a>
-                <a href="#" class="list-group-item" onclick="selectTemplate('hipertensi')">
-                  <i class="fa fa-tint"></i> Hipertensi
-                </a>
-                <a href="#" class="list-group-item" onclick="selectTemplate('jantung')">
-                  <i class="fa fa-heart"></i> Penyakit Jantung
-                </a>
-                <a href="#" class="list-group-item" onclick="selectTemplate('respiratory')">
-                  <i class="fa fa-lungs"></i> Gangguan Pernapasan
-                </a>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <div id="templateContent">
-                <h4>Template Diabetes Mellitus</h4>
-                <div class="well">
-                  <p><strong>Diagnosis:</strong> Diabetes Mellitus Tipe 2</p>
-                  <p><strong>Rekomendasi:</strong></p>
-                  <ul>
-                    <li>Kontrol gula darah rutin</li>
-                    <li>Diet rendah gula dan karbohidrat</li>
-                    <li>Olahraga teratur 30 menit/hari</li>
-                    <li>Minum obat sesuai anjuran dokter</li>
-                  </ul>
-                  <p><strong>Follow-up:</strong> 2 minggu</p>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
-              </div>
-            </div>
-          </div>
+            </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" onclick="applyTemplate()">
-            <i class="fa fa-check"></i> Gunakan Template
-          </button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">
-            <i class="fa fa-close"></i> Batal
-          </button>
-        </div>
-      </div>
     </div>
-  </div>
-
-</section>
 </div>
 
 <script>
